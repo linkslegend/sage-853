@@ -16,6 +16,7 @@ function SearchFilter($query) {
 }
 add_filter('pre_get_posts','SearchFilter');
 
+add_filter( 'wpcf7_autop_or_not', '__return_false' );
 
 
 function my_search() {
@@ -1312,3 +1313,20 @@ function intermac_social_sharing_buttons($content) {
 	}
 };
 add_filter( 'the_content', 'intermac_social_sharing_buttons');
+
+/* show css loaded via plugins etc.
+function crunchify_print_scripts_styles() {
+    // Print all loaded Styles (CSS)
+    global $wp_styles;
+    foreach( $wp_styles->queue as $style ) :
+        echo $style . '  ||  ';
+    endforeach;
+}
+add_action( 'wp_print_scripts', 'crunchify_print_scripts_styles' );
+
+/* turns off widget/plugin css from being registered and printed in the head of the header.php */
+function remove_assets() {
+  wp_dequeue_style( 'ct-ultimate-gdpr' );
+  wp_deregister_style( 'ct-ultimate-gdpr' );
+}
+add_action( 'wp_enqueue_scripts', 'remove_assets', 9999 );

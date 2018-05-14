@@ -209,6 +209,43 @@ input[type=search]{
 .panel-body .tagcloud{margin: 0px;}
 .container-contact-form{}
 .row-contact-form{}
+.accept-this{
+	color: #56646f;
+    font-size: 1em;
+    background: #f2f2f2;
+    margin: 15px 0 0 0;
+    display: block;
+    padding: 10px 0;
+}
+footer .accept-this {
+    color: #fff;
+    font-size: 1em;
+    background: transparent;
+    margin: 10px 0 0;
+    display: block;
+    padding: 10px 0;
+}
+.modal .accept-this{
+	color: #56646f;
+    background: transparent;
+    margin: 5px 0 0;	
+}
+.accept-this .wpcf7-list-item-label {
+    font-size: 1em;
+    font-weight: 500;
+    padding: 0 30px;
+    margin: 0px;
+}
+.accept-this label{
+	margin-bottom: 0;
+}
+.accept-this a{
+    font-size: 1em;
+    font-weight: 600;
+    text-decoration: underline;
+}
+
+
 .contact-form {
     float: none;
     margin-right: 62px;
@@ -219,6 +256,10 @@ input[type=search]{
 .contact-form-button,
 .newsletter-form-button {
     z-index: 999;}
+form input[disabled]{
+	opacity: 0.6;
+	cursor: not-allowed;
+}
 .contact-form-close {
     background: none;
     color: #2594cc;
@@ -615,20 +656,20 @@ footer h3 span{
 
 .kontakt-form-wrap i,
 .kontakt-form-wrap-footer i{
-    color: rgba(121, 132, 155, 0.87);
-    display: inline;
+	color: rgba(121,132,155,.87);
+    display: inline-block;
     font-size: 16px;
     left: 14px;
-    margin-top: 19px;
+    margin-top: 24px;
     position: absolute;
-    transition: color 0.15s ease-in-out 0s;}
+    transition: color .15s ease-in-out 0s;}
 .kontakt-form-wrap-footer i{left: 28px;}    
 .kontakt-form-wrap i:hover,
 .kontakt-form-wrap-footer i:hover{color: rgb(255, 255, 255);}
 
 .kontakt-form-wrap i.fa-envelope-o{    
-	left: 29px;
-    margin-top: 18px;}
+    left: 29px;
+    margin-top: 25px;}
 .kontakt-form textarea.nachricht, 
 .kontakt-form input.name, 
 .kontakt-form input.time, 
@@ -642,8 +683,8 @@ footer h3 span{
     transition: all 0.3s ease-in-out 0s;}
 
 .kontakt-form-wrap-footer i.fa-envelope-o{    
-	left: 29px;
-    margin-top: 15px;}
+    left: 28px;
+    margin-top: 24px;}
 .kontakt-form-footer textarea.nachricht, 
 .kontakt-form-footer input.name, 
 .kontakt-form-footer input.time, 
@@ -755,10 +796,37 @@ footer h3 span{
 }
 
 .captcha-image, .kontakt-form-footer .captcha-image{border: 1px solid #eee;height: 30px!important;margin-left: 3px;margin-top: 12px;padding: 0;position: absolute;z-index: 10;}
-input.captcha, .kontakt-form-footer input.captcha{padding: 0 19px 2px 85px;margin-top: 10px;}
+input.captcha, .kontakt-form-footer input.captcha{padding: 0 19px 2px 85px;margin-top: 15px;}
 
 .captcha-image{margin-top: 5px;}
-input.captcha{margin-top: 3px;}
+input.captcha{margin-top: 15px;}
+
+/*reCaptcha*/
+.grecaptcha-badge {
+    margin-top: 15px!important;
+    box-shadow: none!important;
+    float: right;
+}
+
+footer .grecaptcha-badge{
+	opacity: 0.4;
+	transition: all 0.25s; 
+}
+footer .grecaptcha-badge:hover{
+	opacity: 1;
+}
+
+.rc-anchor-invisible-text {
+    background: #transparent!important;
+    color: #7d7d7d!important;
+}
+.rc-anchor-invisible-text .rc-anchor-pt a:link, 
+.rc-anchor-invisible-text .rc-anchor-pt a:visited {
+    color: #004873!important;
+}
+.rc-anchor-light{
+	background: transparent!important;
+}
 
 /* @end */
 
@@ -1220,6 +1288,9 @@ overflow: hidden;
 margin-bottom: 20px;}
 
 .sidebar .widget-inner{}
+.sidebar .textwidget{
+	padding: 10px;
+}
 
 .sidebar ul {
 	padding: 10px;
@@ -1369,11 +1440,11 @@ border-bottom: 0px;}
     background: #334c68;
     color: #fff;
     cursor: pointer;
-    box-shadow: 0px 0px 6px 0px rgb(37, 148, 204);
-    padding: 10px 13px 9px 13px;
+    box-shadow: none;
+    padding: 9px 13px;
     width: auto;
     position: absolute;
-    top: 0px;
+    top: 1px;
     margin-top: 0;
     border: 0;}
 .search-submit i {
@@ -2177,7 +2248,7 @@ ol.commentlist{
     
 #commentform,
 input[type="submit"], 
-input[type="button"]{margin-top: 10px;}
+input[type="button"]{margin-top: 15px;}
 
 
 /*@end*/
@@ -2374,7 +2445,7 @@ textarea.nachricht {
     display: inline;
     font-size: 16px;
     left: 15px;
-    margin-top: 19px;
+    margin-top: 24px;
     position: absolute;
     transition: color 0.15s ease-in-out 0s;}
     
@@ -2388,15 +2459,15 @@ textarea {
     font-size: 14px;
     color: #FFFFFF;
     height: 80px;
-    margin: 10px 0 0!important;
-    padding: 8px 18px 5px 40px;
+    margin: 15px 0 0;
+    padding: 5px 18px 5px 40px;
     width: 100%;}
     
 input {
     color: #FFFFFF;
     font-size: 13px;
     height: 35px;
-    margin: 10px 0 0;
+    margin: 15px 0 0;
     padding: 0 19px 0px 39px;
     width: 100%;}
     
@@ -2409,6 +2480,7 @@ input[type="button"] {
     color: #FFFFFF;
     display: inline-block;
     font-size: 14px;
+    height: 40px;
     font-weight: 500;
     padding: 0px 27px;
     text-decoration: none;
@@ -2416,7 +2488,7 @@ input[type="button"] {
     transition: all 0.25s ease 0s;}
     
 input[type="submit"]:hover{
-    box-shadow: 0 1px 1px rgba(255, 255, 255, 0.8) inset, 0 0 8px rgba(255, 255, 255, 0.8);}
+    background: #334c68;}
 
 /* @end */
 
@@ -2640,8 +2712,8 @@ h2.important-title {
 .alert{}
 .alert-content {
     border: medium none #fff;
-    font-size: 104%;
-    font-weight: 700;
+    font-size: 1em;
+    font-weight: 500;
     text-align: center;}
 .alert-content a{    color: rgb(250, 250, 250);
     font-size: 106%;
@@ -2655,6 +2727,38 @@ h2.important-title {
     margin-right: 0px;
     margin-top: 1px;}
 #myAlert .close:hover{color: rgb(250, 250, 250)!important;opacity: 1;}
+
+#EUcookieContent{
+    background: none repeat scroll 0 0 #2594cc;
+    margin: 0 auto;
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    bottom: 0;
+    width: 100%;
+    color: #fff;
+    margin-bottom: 0;
+    border: none;
+    padding: 0;
+}
+#EUcookieContent .alert-content {
+    border: medium none #fff;
+    font-size: 1em;
+    font-weight: 500;
+    max-width: 90%;
+    margin: 0 auto;
+    text-align: left;
+    padding: 15px;
+}
+#EUcookieContent .close{
+	color: #fff!important;
+    font-size: 2.5rem;
+    font-weight: 100;
+    opacity: 1;
+    margin-right: 10px;
+    margin-top: 6px;}
+#EUcookieContent .close:hover{color: 334c68!important;opacity: 1;}
+
 /* @end */
 
 /* @group Team Style */
@@ -3207,11 +3311,18 @@ input[type=checkbox] ~ span:before {
     display: inline-block;
     content: "\f1db";
     letter-spacing: 10px;
-    font-size: 1.4em;
+    font-size: 1.3em;
+    margin-left: -25px;
+    position: absolute;
     color: #233e5c;
     width: 1.4em;
+    padding: 0;
 }
 
+footer input[type=checkbox]~span:before, 
+footer input[type=radio]~span:before{
+	color: #fff;
+}
 
 input[type=radio]:checked ~ span:before,
 input[type=checkbox]:checked ~ span:before {
@@ -5774,7 +5885,7 @@ form .newsletter {margin-left: 0;margin-top: 5px;padding: 10px;}
     width: auto;
     right: 6px;
     height: 36px;
-    background: #f2f2f2;
+    background: #eaeaea;
     padding: 9px 12px;}    
     
 .sidebar-primary .main {
@@ -6431,7 +6542,7 @@ header{}
 .frontpage{float: none; margin-left: -15px;}	
 .twothird{width: 100%;float: left; margin-top: -52px;}	
 .onethird{width: 100%;float: left; margin-top: 10px;}
-.wrap{margin-top: 15px;}
+.wrap{margin-top: 20px;}
 .wrap.overlap{margin-top: -70px; padding-top: 0;margin-left: 15px;margin-right: 15px;}
 .page-template-template-full-width-sidebar-h1title .main{margin-top: 10px;}
 .unsere-standorte table, 
@@ -6543,7 +6654,7 @@ form .newsletter {margin-left: 0;margin-top: 5px;padding: 10px;}
 .searchbox .search-submit.btn{
     width: auto;
     right: 6px;
-    background: #f2f2f2;
+    background: #eaeaea;
     padding: 9px 12px;}    
     
 .sidebar-primary .main{
@@ -6732,7 +6843,7 @@ body.unsere-standorte .searchbox {margin-top: 0;background: rgba(37,148,204,1);}
     margin-top: 16px;
 }
 .kontakt-form-wrap-footer i.fa-envelope-o {
-    left: 17px;
+    left: 23px;
     margin-top: 18px;
 }
 .blog .img-thumbnail,
@@ -6740,7 +6851,7 @@ body.unsere-standorte .searchbox {margin-top: 0;background: rgba(37,148,204,1);}
     margin: 0;
     max-height: 100%;
     width: 100%;}
-
+.alert-content {max-width: 95%;}
 
 }
 

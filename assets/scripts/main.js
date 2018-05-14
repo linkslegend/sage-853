@@ -47,17 +47,17 @@
         });
 
         //Alert & Cookies
-        window.addEventListener('load', function(){
             $('#cookie-message-close').click(function(){
                 $('#myAlert').hide();
+                Cookies.set('cookie-message-bar', true, { expires: 7 });
             });
-
-            if (!Cookies.get("cookie-message-bar"))
+            if (Cookies.get("cookie-message-bar"))
             {
-                $('#myAlert').show();
-                Cookies.set('cookie-message-bar', true, { expires: 01 });
+              $('#myAlert').hide();
             }
-        });
+            else{
+              $('#myAlert').show();
+            }
 
 
         $('body').popover({

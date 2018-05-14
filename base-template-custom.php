@@ -57,10 +57,10 @@ use Roots\Sage\Wrapper;
                 </div>
               </div>
               <div class="col-6 col-sm-3 col-md-3 col-lg-2">
-              <div class="newsletter-form-button">
-                    <button class="btn btn-default Modal Popup custom-submit" href="#myModal2" data-toggle="modal"><i class="fa fa-newspaper-o"></i>
-                    <div class="button-text">Newsletter</div></button>
-                  </div>
+                <div class="newsletter-form-button">
+                      <a href="http://eepurl.com/b_IMtj" target="_blank"><button class="btn btn-default custom-submit"><i class="fa fa-newspaper-o"></i>
+                      <div class="button-text">Newsletter</div></button></a>
+                    </div>
                 </div>
             </div>
           </div> <!-- /. search -->
