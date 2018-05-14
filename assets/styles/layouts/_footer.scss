@@ -1107,17 +1107,25 @@ footer .col-md-4.text-7.widget_text{
 
 .recaptcha-box{
 	display: block;
-	text-align: center;
-	padding: 5px;
-	font-size: 0.9em;
+	text-align: left;
+	padding: 5px 2px;
+	font-size: 0.8em;
 }
 
-.recaptcha-box a{
+footer .recaptcha-box a{
 	color: #fff;
 	transition:all 0.2s;
 	&:hover{
-	    text-decoration: underline;	}
+	    border-bottom: 1px solid #fff;	}
 }
+.recaptcha-box a{
+	color: #004d7c;
+	text-decoration: none;
+		&:hover{
+	text-decoration: none;
+	}
+}
+
 /* @end */
 
 
