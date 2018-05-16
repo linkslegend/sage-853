@@ -162,14 +162,6 @@
             }); // see-also hover end
         });
 
-        var wow = new WOW
-            ({
-               mobile: false,// trigger animations on mobile devices (true is default)
-               live:   true
-             });
-        wow.init();
-        wow.sync();
-
         /*Lazy Load Youtube*/
         ( function() {
         	var youtube = document.querySelectorAll( ".youtube" );
@@ -196,18 +188,6 @@
            e.preventDefault();
            slideIndex = $(this).index();
            $( '.single-featured2' ).slick('slickGoTo', parseInt(slideIndex) );
-        });
-
-        $(document).ready(function () {
-        $('iframe').iFrameResize({
-          log:true,
-          checkOrigin:false,
-          sizeHeight:true,
-		      scrolling:true,
-		      enablePublicMethods     : true,
-          heightCalculationMethod : 'bodyOffset'
-        },
-        '#myIframe' );
         });
 
 

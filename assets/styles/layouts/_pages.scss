@@ -311,6 +311,7 @@ form input[disabled]{
 }
 .messen-content{
 	margin-top: 5px;
+	padding: 0px 5px 0 5px;
 }
 
 
@@ -1270,14 +1271,18 @@ b.highlight{color: #2594cc;background: #fff;padding: 2px 1px;}
 
 /*Widget Sidebar*/
 .sidebar h3{
-background: none repeat scroll 0 0 rgb(37, 148, 204);
-color: #FFFFFF;
-font-size: 15px;
-font-weight: 500;
-margin-top: 0;
-padding: 10px 15px;
-text-indent: 0;
-transition: all 0.3s ease 0s;}
+    background: none repeat scroll 0 0 #2594cc;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 500;
+    margin-top: 0;
+    margin-left: -1px;
+    margin-top: -1px;
+    margin-right: -1px;
+    z-index: 999;
+    padding: 12px 15px;
+    text-indent: 0;
+    transition: all .3s ease 0s;}
     
 .sidebar section {
 background: none repeat scroll 0 0 #FFFFFF;
@@ -2019,6 +2024,7 @@ ul.postlist li:before{
     font-family: FontAwesome;
     position: absolute;
     margin-left: 0;
+    padding: 0px 0px 0px 2px;
     width: 1.2em;
     font-size: 115%;}
 .single.main,
@@ -2348,9 +2354,26 @@ footer .widget-inner h3{}
     display: inline-block;
     width: 100%;
     padding-top: 6px;}
-.footer-copyright{background: #334C68;color: #fff; padding: 15px 15px 15px 21px; font-size: 75%;}
+.footer-copyright{background: #334c68;color: #e2e2e2; padding: 15px 15px 15px 21px; font-size: 11px;}
+.footer-copyright ul{
+	overflow: hidden;
+    margin: auto;
+    float: none;
+    list-style: none;
+    text-align: left;
+    font-size: 11px;
+    text-transform: none;}
+.footer-copyright li:first-child{
+	padding-left: 0;
+    border: 0;}
+.footer-copyright li {
+	float: left;
+    padding: 0 10px;
+        line-height: 12px;
+    border-left: 1px solid #f2f2f2;
+}	
 .footer-copyright a{
-	color: rgb(150, 150, 150);
+	color: #e2e2e2;
 	text-decoration: none;}
 .footer-copyright a:hover{
 	color: rgb(37, 148, 204);
@@ -3019,7 +3042,7 @@ body.unsere-standorte .panel-body{
 }
 .accordion-toggle > .panel-heading {
     background: none repeat scroll 0 0 rgb(37, 148, 204);
-    padding: 10px 15px;
+    padding: 12px 15px;
     color: rgb(250, 250, 250);}
 .accordion-toggle.collapsed > .panel-heading {
     background: none repeat scroll 0 0 rgb(189, 195, 195);
@@ -3040,13 +3063,18 @@ h4.panel-title{
 /*Check List style*/
 .check-list{}
 ul.check {margin-left: 0;padding-left: 0;list-style: none;}
-ul.check  li{padding-left: 15px;}
+ul.check  li{    
+	padding-bottom: 5px;
+	padding-left: 25px;
+    display: block;}
 ul.check li:before{  
     content: "\f058";
     color: rgb(37, 148, 204);
-    display: inline-block;
     font-family: FontAwesome;
-    margin-left: -14px;
+    margin-left: -22px;
+    float: left;
+    padding-left: 1px;
+    display: block;
     width: 1.2em;
     font-size: 115%;}
 
@@ -3234,7 +3262,7 @@ ul.linklist li:before {
 
 
 /*Custom Stuff*/
-.yt-content{margin-top: 5px;}
+.yt-content{margin-top: 5px;padding: 0px 5px 0 5px;}
 .yt-video{}
 .js-lazyYT{}
 h2.youtube-box {
@@ -3981,6 +4009,7 @@ span.wpcf7-not-valid-tip {
     font-size: .7em;
     position: absolute;
     margin-left: -17px;
+    padding-left: 2px;
     color: #2594cc;
 }
 .img-fluid.top{
@@ -4756,7 +4785,7 @@ h2.author-about{
     flex-direction: column;
     overflow: hidden;
     position: relative;
-    min-height: 470px;}
+    min-height: 480px;}
 #owl-blog-posts .slick-slide{padding: 0px;overflow: hidden!important;}
 #owl-blog-posts .slick-slide .entry-summary{
 	padding: 10px;
@@ -5004,7 +5033,7 @@ footer .widget{border-right: 1px solid rgb(242,242,242);}
 .entry-summary {
     padding: 5px 10px 10px;}
 .entry-summary p {
-    font-size: 14px;}
+    font-size: 13px;}
 h2.entry-title {
     font-size: 1.2em;}
 #searchWrapper-hidden{

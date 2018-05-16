@@ -10,10 +10,8 @@
     "bootstrap": "git://github.com/twbs/bootstrap.git#v4.0.0-beta",
     "popper.js": "^1.12.3",
     "animate.css": "^3.5.2",
-    "wow": "^1.1.2",
     "slick-carousel": "^1.8.1",
     "lozad": "^1.2.0",
-    "iframe-resizer": "^3.5.16",
     "js-cookie": "^2.2.0"
   },
   "overrides": {
