@@ -16,7 +16,6 @@ function SearchFilter($query) {
 }
 add_filter('pre_get_posts','SearchFilter');
 
-add_filter( 'wpcf7_autop_or_not', '__return_false' );
 
 
 function my_search() {
@@ -355,7 +354,7 @@ function theme_options_do_page() {
 				 * A futurewave textarea option
 				 */
 				?>
-				<tr valign="top"><th scope="row"><?php _e( 'A textbox', 'futurewavetheme' ); ?></th>
+				<tr valign="top"><th scope="row"><?php _e( 'Header Code', 'futurewavetheme' ); ?></th>
 					<td>
 						<textarea id="futurewave_theme_options[sometextarea]" class="large-text" cols="50" rows="10" name="futurewave_theme_options[sometextarea]">
 						<?php echo esc_textarea( $options['sometextarea'] ); ?></textarea>
@@ -382,7 +381,7 @@ function theme_options_validate( $input ) {
 	$input['sometext'] = wp_filter_post_kses( $input['sometext'] );
 
 	// Say our textarea option must be safe text with the allowed tags for posts
-	$input['sometextarea'] = wp_filter_post_kses( $input['sometextarea'] );
+	//$input['sometextarea'] = wp_filter_post_kses( $input['sometextarea'] );
 
 	return $input;
 }
@@ -727,122 +726,33 @@ function youtubeslider_shortcode2($atts){
 };
 
 
+
+
 //  -------------> 		#################### 	<-------------
 //  -------------> 		#################### 	<-------------
 //  ----------> Messen Liste Frontpage Shortcode <----------
 //  -------------> 		#################### 	<-------------
 //  -------------> 		#################### 	<-------------
-
 add_shortcode( 'messenliste', 'messenliste_shortcode' );
 function messenliste_shortcode(){
     ob_start();
             ?>
-            <ul class="postlist"><li class="postslist-item">
-              <a class="hvr-underline-from-left" rel="bookmark" href="#messe1" data-toggle="modal">ACHEMA 2018</a>
-            </li>
-            <li class="postslist-item">
-              <a class="hvr-underline-from-left" rel="bookmark" href="#messe2" data-toggle="modal">Hannover Messe 2018</a>
-            </li>
-            <li class="postslist-item">
-              <a class="hvr-underline-from-left" rel="bookmark" href="#messe3" data-toggle="modal">20th ISC Stuttgart 2018</a>
-            </li></ul>
-
+      <?php include "../messe-liste.php"; ?>
         <?php
         $list = ob_get_clean();
         return $list;
 };
-
 
 //  -------------> 		#################### 	<-------------
 //  -------------> 		#################### 	<-------------
 //  ----------> Messen Slider Frontpage Shortcode <----------
 //  -------------> 		#################### 	<-------------
 //  -------------> 		#################### 	<-------------
-
 add_shortcode( 'messenslider', 'messen_shortcode' );
 function messen_shortcode(){
     ob_start();
             ?>
-
-            <div id="owl-messen">
-              <div>
-                  <article class="messen" itemscope="" itemtype="http://schema.org/BlogPosting" >
-                    <header>
-                      <h2 class="messen-title" itemprop="name headline">
-                      <a title="" rel="bookmark" href="#messe1" data-toggle="modal" tabindex="0">ACHEMA 2018</a>
-                    </h2>
-                    </header>
-                    <div class="entry-summary" itemprop="articleBody">
-                      <img class="lozad" width="100%" src="https://s3-eu-west-1.amazonaws.com/bilder-dichtungen/messen/achema2018.png">
-                    <div class="yt-content">
-                    Wir stellen aus auf der	<strong>ACHEMA</strong> Weltforum und Internationale Leitmesse der Prozessindustrie<br />
-                    <strong>11.-15. Juni 2018</strong> - <strong>Frankfurt am Main</strong> - <strong>Halle 9, Stand D 18</strong>
-                    </div>
-                    </div>
-                  </article>
-              </div>
-
-              <div>
-                <article class="messen" iitemscope="" itemtype="http://schema.org/BlogPosting" >
-                  <header>
-                    <h2 class="messen-title" itemprop="name headline">
-                    <a title="" rel="bookmark" href="" tabindex="0">Hannover Messe 2018</a>
-                  </h2>
-                  </header>
-                  <div class="entry-summary" itemprop="articleBody">
-                  <img class="lozad" width="100%" src="https://s3-eu-west-1.amazonaws.com/bilder-dichtungen/messen/hannovermesse.png">
-                  <div class="messen-content">
-                    Besuchen Sie uns auf der <strong>Hannover Messe</strong> IAMD vom <br />
-                    <strong>23. -27.04.2018</strong> auf dem Gemeinschaftsstand der VDMA für Antriebstechnik und Fluidtechnik - <strong>Halle 23, Stand B 19</strong><br />
-                  </div>
-                  </div>
-                </article>
-              </div>
-
-              <div>
-                <article class="messen" iitemscope="" itemtype="http://schema.org/BlogPosting" >
-                  <header>
-                  <h2 class="messen-title" itemprop="name headline">
-                    <a title="" rel="bookmark" href="" tabindex="0">20th ISC Stuttgart 2018</a>
-                  </h2>
-                  </header>
-                  <div class="entry-summary" itemprop="articleBody">
-                  <img class="lozad" width="100%" src="https://s3-eu-west-1.amazonaws.com/bilder-dichtungen/messen/isc-messe.png">
-                  <div class="messen-content">
-                  <strong>20th ISC  International Sealing Conference</strong> Stuttgart 2018 Internationale Dichtungstagung Stuttgart 2016<br />
-                  am <strong>10. und 11. Oktober 2018</strong> an der Universität Stuttgart.<br />
-                  </div>
-                  </div>
-                </article>
-              </div>
-            </div>
-
-
-
-
-            <!-- Messe 1 Modal -->
-            <div aria-hidden="true" role="dialog" tabindex="-1" id="messe1" class="modal fade testclass">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                    <button aria-hidden="true" data-dismiss="modal" class="close contact-form-close" type="button">x</button>
-                        <div class="modal-body">
-                            <header>
-                              <h2 class="messen-title" itemprop="name headline">
-                              <a title="" rel="bookmark" href="" tabindex="0">ACHEMA 2018</a>
-                            </h2>
-                            </header>
-                            <div class="entry-summary" itemprop="articleBody">
-                              <img class="lozad" width="100%" src="https://s3-eu-west-1.amazonaws.com/bilder-dichtungen/messen/achema2018.png">
-                            <div class="yt-content">
-                            Wir stellen aus auf der	<strong>ACHEMA</strong> Weltforum und Internationale Leitmesse der Prozessindustrie<br />
-                            <strong>11.-15. Juni 2018</strong> - <strong>Frankfurt am Main</strong> - <strong>Halle 9, Stand D 18</strong>
-                            </div>
-                            </div>
-                      </div><!-- /.modal-body -->
-                    </div> <!-- /.modal-content -->
-                </div> <!-- /.modal-dialog -->
-            </div><!-- End modal -->
-
+      <?php include "../messen.php"; ?>
         <?php
         $list = ob_get_clean();
         return $list;
@@ -1314,7 +1224,8 @@ function intermac_social_sharing_buttons($content) {
 };
 add_filter( 'the_content', 'intermac_social_sharing_buttons');
 
-/* show css loaded via plugins etc. */
+
+/* show css loaded via plugins etc.
 function crunchify_print_scripts_styles() {
     // Print all loaded Styles (CSS)
     global $wp_styles;
@@ -1322,11 +1233,13 @@ function crunchify_print_scripts_styles() {
         echo $style . '  ||  ';
     endforeach;
 }
-add_action( 'wp_print_scripts', 'crunchify_print_scripts_styles' );
+add_action( 'wp_print_scripts', 'crunchify_print_scripts_styles' );*/
 
 /* turns off widget/plugin css from being registered and printed in the head of the header.php */
 function remove_assets() {
   //wp_dequeue_style( 'ct-ultimate-gdpr' );
   //wp_deregister_style( 'ct-ultimate-gdpr' );
+  //wp_dequeue_style( 'ct-ultimate-gdpr-jquery-ui' );
+
 }
 add_action( 'wp_enqueue_scripts', 'remove_assets', 9999 );
