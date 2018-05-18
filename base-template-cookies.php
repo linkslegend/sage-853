@@ -68,7 +68,7 @@ use Roots\Sage\Wrapper;
           <div class="row">
         <main class="main">
           <?php include Wrapper\template_path(); ?>
-          <?php include "../datenschutz-content.php"; ?>
+          <?php include "../cookies-content.php"; ?>
         </main><!-- /.main -->
         <?php if (Setup\display_sidebar()) : ?>
           <aside class="sidebar">

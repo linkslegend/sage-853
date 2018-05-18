@@ -69,7 +69,6 @@ use Roots\Sage\Wrapper;
         <main class="main">
           <?php include Wrapper\template_path(); ?>
           <?php include "../agb-content.php"; ?>
-
         </main><!-- /.main -->
         <?php if (Setup\display_sidebar()) : ?>
           <aside class="sidebar">
