@@ -10,5 +10,6 @@
   <?php } elseif (is_page ( 'unsere-standorte' ))  {  ?>
     <script type="text/javascript" src="https://maps.google.com/maps/api/js?key=AIzaSyDKylyJ1FlCxe7J3rf55wMKFPfUA3MR7Jg"></script>
   <?php } ?>
+  <?php $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['sometextarea'].''); ?>
 
 </head>
