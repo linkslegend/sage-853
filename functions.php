@@ -32,9 +32,15 @@ unset($file, $filepath);
 require_once get_template_directory() . '/class-wp-bootstrap-navwalker.php';
 
 
-require get_template_directory() . '/plugin-update-checker-4.4/plugin-update-checker.php';
+require 'plugin-update-checker/plugin-update-checker.php';
 $myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
-	'https://kunststoffdichtungen.com/theme_updates/theme.json',
-	__FILE__, //Full path to the main plugin file or functions.php.
-	'unique-plugin-or-theme-slug'
+	'https://github.com/linkslegend/sage-853',
+	__FILE__,
+	'sage-853'
 );
+
+//Optional: If you're using a private repository, specify the access token like this:
+$myUpdateChecker->setAuthentication('your-token-here');
+
+//Optional: Set the branch that contains the stable release.
+$myUpdateChecker->setBranch('stable-branch-name');
