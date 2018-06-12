@@ -30,3 +30,11 @@ unset($file, $filepath);
 
 // Register Custom Navigation Walker
 require_once get_template_directory() . '/class-wp-bootstrap-navwalker.php';
+
+
+require get_template_directory() . '/plugin-update-checker-4.4/plugin-update-checker.php';
+$myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
+	'https://kunststoffdichtungen.com/theme_updates/theme.json',
+	__FILE__, //Full path to the main plugin file or functions.php.
+	'unique-plugin-or-theme-slug'
+);

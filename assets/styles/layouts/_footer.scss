@@ -1076,8 +1076,8 @@ footer .recaptcha-box a{
     float: right;
     display: block;
     border-radius: 5px;
-	max-width: 150px;
-    width: 150px;
+	max-width: 155px;
+    width: 155px;
     text-align: center;
     cursor: pointer;
     box-shadow: inset 0 0 0 0px #fff;
@@ -1086,7 +1086,8 @@ footer .recaptcha-box a{
     vertical-align: bottom;
     padding: 10px 15px;
     background-color: hsla(0,0%,100%,.1)!important;
-    color: #fff;
+    color: #fff!important;
+    border: none!important;
     transition: all .25s;
      	&:hover{
 			box-shadow: inset 0 0 0 2px #fff;
@@ -1101,6 +1102,8 @@ footer .recaptcha-box a{
     font-size: 1.1em;
     margin-bottom: 10px;
     min-width: 150px;
+    color: #fff!important;
+    border: none!important;
     border-radius: 5px;
     vertical-align: bottom;
     cursor: pointer;
@@ -1114,6 +1117,13 @@ footer .recaptcha-box a{
 			background: #334c68!important;
 		}
 }
+
+#ct-ultimate-gdpr-cookie-accept, 
+#ct-ultimate-gdpr-cookie-read-more, 
+#ct-ultimate-gdpr-cookie-change-settings{
+	margin: 5px!important;
+}
+
 #ct-ultimate-gdpr-container{
 }
 .ui-widget.ui-widget-content {
@@ -1454,9 +1464,9 @@ label[for=ct-ultimate-gdpr-consent]{
 .ct-slider-cookie3 .ct-ultimate-gdpr-slider {width: 80%;}
 .ct-slider-cookie4 .ct-ultimate-gdpr-slider {width: 100%;}
 #ct-ultimate-gdpr-cookie-content{margin-bottom: 15px;}
-#ct-ultimate-gdpr-cookie-accept {float: none;width: 95%;margin: 0px auto 10px auto;}
+#ct-ultimate-gdpr-cookie-accept {float: none;width: 95%;margin: 0px auto 10px auto!important;}
 #ct-ultimate-gdpr-cookie-change-settings,
-#ct-ultimate-gdpr-cookie-read-more{width: 46%;margin-left: 0;	max-width: none;}
+#ct-ultimate-gdpr-cookie-read-more{width: 46%; margin-left: 0!important; margin-right: 10px!important; max-width: none;}
 #ct-ultimate-gdpr-cookie-modal-body {padding: 0;}
 .ct-ultimate-gdpr-cookie-modal-slider li label{font-size: 11px;}
 .ct-ultimate-gdpr-cookie-modal-slider [type=radio]:checked+label:before,
