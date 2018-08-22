@@ -287,6 +287,77 @@ form input[disabled]{
 #myModal .modal-dialog{
 	margin: 50px auto;}
 
+#skftabelle2 .modal-dialog,
+#skftabelle1 .modal-dialog{
+    max-width: 790px;
+    width: 95%;
+    line-height: 1.25em;
+    font-size: 0.95em;
+}
+#skftabelle2 .modal-dialog{
+	max-width: 635px;
+}
+ol.footnotes {
+    line-height: 1.5em;
+    list-style: none;
+    margin-left: 0;
+    border-top: 0px dotted #dadada;
+    border-bottom: 0px dotted #dadada;
+    padding: 5px 0 0 0;
+    margin-bottom: 0;}
+ol.footnotes li {
+    padding: 5px 8px;
+}
+ol.footnotes span {
+    width: 484px;
+    margin-left: 4px;
+    color: #777;
+}
+
+.catTableWrapper {
+    position: relative;
+    overflow: auto;
+}
+#catalogue-table table {
+    border: 1px solid #dadada;
+    background: #fff;
+}
+#catalogue-table table td{
+	display: table-cell;}
+
+#catalogue-table table tr td {
+    vertical-align: top;
+}
+#catalogue-table td, 
+#catalogue-table th{
+    padding: 5px;
+}
+#catalogue-table .thin-table-border td, 
+#catalogue-table .thin-table-border th {
+    border-bottom: 1px solid #000;
+}
+.modal-body .tableTitle {
+    padding-bottom: 10px;
+    font-weight: 700;
+    font-size: 1.3em;
+}
+.download-pdf {
+    font-weight: bold;
+    background: #e6e6e6d2;
+    padding: 10px 0px 10px 15px;
+    line-height: 1.2em;
+    border-bottom: 1px solid #adadad;
+    margin: 0px;
+}
+.download-pdf:before{
+	font-family: 'FontAwesome';
+    content: "\f1c1";
+    padding: 0px 5px 0px 0px;
+}
+
+
+
+
 .wow{visibility: hidden;}
 
 .text-left {
@@ -1894,6 +1965,14 @@ padding: 0 10px;}
 img.alignleft{
 	padding: 15px;
 	clear: both;}
+figure{
+	transition: all 0.25s ease;}
+a.Modal:hover figure{
+    box-shadow: inset 0px 0px 0px 2px #334c68;}
+a.Modal:hover figure > figcaption{
+	color: #334c68;
+}
+
 .alignright{
 	float: right;
 	padding: 15px;
@@ -6879,6 +6958,14 @@ body.unsere-standorte .searchbox {margin-top: 0;background: rgba(37,148,204,1);}
     max-height: 100%;
     width: 100%;}
 .alert-content {max-width: 95%;}
+
+.alignright {
+    float: none;
+    width: 100%!important;
+    padding: 15px;
+    text-align: center;
+    margin: 0 auto;
+    clear: both;}
 
 }
 
