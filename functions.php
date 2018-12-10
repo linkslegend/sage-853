@@ -19,6 +19,9 @@ $sage_includes = [
   'lib/customizer.php' // Theme customizer
 ];
 
+/* Disable the Gutenberg editor. */
+add_filter('use_block_editor_for_post', '__return_false');
+
 foreach ($sage_includes as $file) {
   if (!$filepath = locate_template($file)) {
     trigger_error(sprintf(__('Error locating %s for inclusion', 'sage'), $file), E_USER_ERROR);

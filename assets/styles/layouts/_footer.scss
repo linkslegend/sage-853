@@ -1081,7 +1081,7 @@ footer .recaptcha-box a{
     font-weight: 500;
     font-size: .9em;
     vertical-align: bottom;
-    padding: 10px 15px;
+    padding: 10px 5px;
     background-color: hsla(0,0%,100%,.1)!important;
     color: #fff!important;
     border: none!important;
@@ -1462,6 +1462,16 @@ label[for=ct-ultimate-gdpr-consent]{
 .ct-ultimate-gdpr-cookie-modal-slider [type=radio]:checked+label:before,
 .ct-ultimate-gdpr-cookie-modal-slider [type=radio]:not(:checked)+label:before{width: 70px;height: 78px;	left: -12px;top: -54px;}
 .ct-ultimate-gdpr-cookie-modal-content {margin: 10px auto 10px;padding: 10px;}
+}
+
+@media screen and (max-width: 500px){
+#ct-ultimate-gdpr-cookie-popup.ct-ultimate-gdpr-cookie-popup-classic #ct-ultimate-gdpr-cookie-change-settings{
+    text-align: center!important;
+    float: left!important;
+    margin: 5px!important;}
+#ct-ultimate-gdpr-cookie-popup.ct-ultimate-gdpr-cookie-popup-classic #ct-ultimate-gdpr-cookie-read-more {
+    float: left!important;
+}
 }
 
 /* @end */
