@@ -3,7 +3,7 @@
 <div id="myAlert" class="alert hidden" data-alert="alert" >
     <a class="close in" id="cookie-message-close" data-dismiss="alert" href="#">&times;</a>
     <div class="alert-content">
-      <?php include "home/master/header-content.php"; ?>
+      <?php include "/home/master/header-content.php"; ?>
     </div>
 </div>
 

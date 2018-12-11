@@ -733,7 +733,7 @@ add_shortcode( 'messenliste', 'messenliste_shortcode' );
 function messenliste_shortcode(){
     ob_start();
             ?>
-      <?php include "home/master/messe-liste.php"; ?>
+      <?php include "/home/master/messe-liste.php"; ?>
         <?php
         $list = ob_get_clean();
         return $list;
@@ -748,7 +748,7 @@ add_shortcode( 'messenslider', 'messen_shortcode' );
 function messen_shortcode(){
     ob_start();
             ?>
-      <?php include "home/master/messen.php"; ?>
+      <?php include "/home/master/messen.php"; ?>
         <?php
         $list = ob_get_clean();
         return $list;
