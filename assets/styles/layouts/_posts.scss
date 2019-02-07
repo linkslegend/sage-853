@@ -1,0 +1,24 @@
+.noborder {
+  border: none !important;
+}
+
+.thumb {
+  height: 100%;
+}
+
+.thumb .border {
+  height: 100%;
+}
+
+p.small {
+  font-size: 85%;
+  line-height: 1.7em;
+}
+
+figure img.noborder{
+  transition: all 0.25s;
+}
+
+figure img.noborder:hover{
+  box-shadow: 1px 5px 30px rgba(0,0,0,.1);
+}
