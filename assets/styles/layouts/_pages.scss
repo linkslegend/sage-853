@@ -867,7 +867,13 @@ footer h3 span{
     background-color: #2594cc;
 }
 
-.captcha-image, .kontakt-form-footer .captcha-image{border: 1px solid #eee;height: 30px!important;margin-left: 3px;margin-top: 12px;padding: 0;position: absolute;z-index: 10;}
+.captcha-image, .kontakt-form-footer .captcha-image{
+	border: 1px solid #eee;height: 30px!important;
+	margin-left: 2px;
+	margin-top: 18px;
+	padding: 0;
+	position: absolute;
+	z-index: 10;}
 input.captcha, .kontakt-form-footer input.captcha{padding: 0 19px 2px 85px;margin-top: 15px;}
 
 .captcha-image{margin-top: 5px;}
@@ -1775,8 +1781,17 @@ padding: 0 10px;}
 	display: block;
 	padding: 15px 15px;	}
 
-.entry-content a{color: rgba(0, 136, 204, 0.7);border-bottom: 1px dashed rgba(0, 136, 204, 0.7);font-weight: bold;}
-.entry-content a:hover{color: rgba(0, 136, 204, 1);border-bottom: 1px dashed rgba(0, 136, 204, 1);}
+.entry-content a{
+		color: rgb(0, 77, 124);
+    padding-bottom: 0.13em;
+    border-bottom: 1px dashed rgba(0,136,204,.7);
+    font-weight: 500;
+    font-size: 1.1em;
+	}
+.entry-content a:hover{
+	color: rgba(0, 136, 204, 1);
+	border-bottom: 1px solid rgba(0, 136, 204, 1);
+}
 /*.entry-content a:before{
 	color: rgba(0, 136, 204, 0.7);
     content: "\f14c";
@@ -2303,7 +2318,7 @@ ol.commentlist{
 }
 #comments .comment-form p{
 	padding: 0;
-	margin: 0;}
+	margin: 5px 0;}
 #comments .comment-form label{
 	padding: 0;
 	font-size: 0.9em;
@@ -4056,7 +4071,7 @@ span.wpcf7-not-valid-tip {
 	border: 15px solid #fff;}
 .single .figure-caption,
 .single .wp-caption-text{
-	padding: 0px 15px 15px 15px;
+	padding: 10px;
 }
 .single .wp-caption-text{
 	text-align: left;
