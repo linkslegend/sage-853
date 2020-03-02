@@ -18,10 +18,10 @@
 </div>
 
 <p id="back-top">
-	<a href="#top"><span><i class="fa fa-arrow-up"></i></span></a>
+	<a href="#top" aria-label="Nach oben scrollen Button"><span><i class="fa fa-arrow-up"></i></span></a>
 </p>
 
-
+<div class="overlay"></div>
 <!-- Start contact Modal -->
 <div aria-hidden="true" role="dialog" tabindex="-1" id="myModal" class="modal fade testclass">
     <div class="modal-dialog">

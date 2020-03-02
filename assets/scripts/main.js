@@ -48,92 +48,168 @@
 
         //Alert & Cookies
             $('#cookie-message-close').click(function(){
-                $('#myAlert').hide();
+                $('#myAlert').addClass("slide-out");
                 Cookies.set('cookie-message-bar', true, { expires: 7 });
             });
             if (Cookies.get("cookie-message-bar"))
             {
-              $('#myAlert').hide();
+              $('#myAlert').css({"visibility":"hidden", "z-index":"-1"});
             }
             else{
-              $('#myAlert').show();
+              $('#myAlert').css({"visibility":"visible", "z-index":"3"});
             }
 
 
         $('body').popover({
-        selector: '[data-popover]',
-        trigger: 'hover focus',
-        html: true,
-        placement: 'bottom',
-        delay: {show: 50, hide: 50}
+          selector: '[data-popover]',
+          trigger: 'hover focus',
+          html: true,
+          placement: 'bottom',
+          delay: {show: 50, hide: 50}
+        });
+        
+        jQuery(function($){
+          if ( $('#owl-blog-posts').length > 0 ) {
+            var slider1 = tns({
+              container: '#owl-blog-posts',
+              items: 1,
+              controlsText: ['zurück', 'weiter'],
+              slideBy: 'page',
+              mouseDrag: true,
+              gutter: 10,
+              lazyload: true,
+              disable: false,
+              autoplay: false,
+              responsive: {
+                400: {
+                    items: 1,
+                    disable: true
+                },
+                700: {
+                    items: 2,
+                    disable: false
+                },
+                900: {
+                    items: 3,
+                    disable: false
+                }
+              }
+            });
+          }
+
+          if ( $('#owl-blog-posts-2').length > 0 ) {
+            var slider5 = tns({
+              container: '#owl-blog-posts-2',
+              items: 1,
+              controlsText: ['zurück', 'weiter'],
+              slideBy: 'page',
+              mouseDrag: true,
+              gutter: 10,
+              lazyload: true,
+              disable: false,
+              autoplay: false,
+              responsive: {
+                400: {
+                    items: 1,
+                    disable: true
+                },
+                700: {
+                    items: 2,
+                    disable: false
+                },
+                900: {
+                    items: 2,
+                    disable: false
+                }
+              }
+            });
+          }
+
+          if ( $('#owl-youtube').length > 0 ) {
+            var slider2 = tns({
+              container: '#owl-youtube',
+              items: 1,
+              controlsText: ['zurück', 'weiter'],
+              slideBy: 'page',
+              mouseDrag: true,
+              gutter: 10,
+              lazyload: true,
+              autoplay: false,
+              disable: false,
+              responsive: {
+                400: {
+                    items: 1,
+                    disable: true
+                },
+                700: {
+                    items: 2,
+                    disable: false
+                },
+                900: {
+                    items: 3,
+                    disable: false
+                }
+              }
+            });
+          }
+
+          if ( $('#owl-messen').length > 0 ) {
+            var slider3 = tns({
+              container: '#owl-messen',
+              controlsText: ['zurück', 'weiter'],
+              items: 1,
+              slideBy: 'page',
+              mouseDrag: true,
+              gutter: 10,
+              lazyload: true,
+              autoplay: false,
+              disable: false,
+              responsive: {
+                400: {
+                    items: 1,
+                    disable: true
+                },
+                700: {
+                    items: 2,
+                    disable: false
+                },
+                900: {
+                    items: 3,
+                    disable: false
+                }
+              }
+            });
+          }
+
+          if ($('#owl-product-posts').length > 0 ) {
+            var slider4 = tns({
+              container: '#owl-product-posts',
+              controlsText: ['zurück', 'weiter'],
+              items: 1,
+              slideBy: 'page',
+              mouseDrag: true,
+              gutter: 10,
+              lazyload: true,
+              autoplay: false,
+              disable: false,
+              responsive: {
+                400: {
+                    items: 1,
+                    disable: true
+                },
+                600: {
+                    items: 2,
+                    disable: false
+                },
+                900: {
+                    items: 3,
+                    disable: false
+                }
+              },
+            });
+          }
         });
 
-          $('#owl-blog-posts').slick({
-             lazyLoad: 'ondemand',
-        	   infinite: true,
-          	 slidesToShow: 2,
-        		  arrows: true,
-          		slidesToScroll: 1,
-        	    slide: 'div',
-              dots: true,
-          // the magic
-          	responsive: [
-          	  {breakpoint: 1250, settings: {slidesToShow: 2, infinite: true}},
-          	  {breakpoint: 991, settings: {slidesToShow: 1, infinite: true}},
-              {breakpoint: 769, settings: {slidesToShow: 1, infinite: true}},
-              {breakpoint: 600, settings: {slidesToShow: 1, infinite: true}}
-            ]
-          });
-
-
-          $('#owl-youtube').slick({
-               lazyLoad: 'ondemand',
-          	   infinite: true,
-            	 slidesToShow: 3,
-          		  arrows: false,
-            		slidesToScroll: 1,
-          	    slide: 'div',
-                dots: true,
-            // the magic
-            	responsive: [
-            	  {breakpoint: 1250, settings: {slidesToShow: 3, infinite: true}},
-            	  {breakpoint: 991, settings: {slidesToShow: 2, infinite: true}},
-                {breakpoint: 769, settings: {slidesToShow: 2, infinite: true}},
-                {breakpoint: 600, settings: {slidesToShow: 1, infinite: true}}
-              ]
-          });
-          $('#owl-messen').slick({
-               lazyLoad: 'ondemand',
-          	   infinite: true,
-            	 slidesToShow: 3,
-          		  arrows: false,
-            		slidesToScroll: 1,
-          	    slide: 'div',
-                dots: true,
-            // the magic
-            	responsive: [
-            	  {breakpoint: 1250, settings: {slidesToShow: 3, infinite: true}},
-            	  {breakpoint: 991, settings: {slidesToShow: 2, infinite: true}},
-                {breakpoint: 769, settings: {slidesToShow: 2, infinite: true}},
-                {breakpoint: 600, settings: {slidesToShow: 1, infinite: true}}
-              ]
-          });
-        $('#owl-product-posts').slick({
-             lazyLoad: 'ondemand',
-        	   infinite: true,
-          	 slidesToShow: 3,
-        		  arrows: false,
-          		slidesToScroll: 1,
-        	    slide: 'div',
-              dots: true,
-          // the magic
-          	responsive: [
-          	  {breakpoint: 1250, settings: {slidesToShow: 3, infinite: true}},
-          	  {breakpoint: 991, settings: {slidesToShow: 2, infinite: true}},
-              {breakpoint: 769, settings: {slidesToShow: 2, infinite: true}},
-              {breakpoint: 600, settings: {slidesToShow: 1, infinite: true}}
-            ]
-        });
         jQuery(function($){
             //  SEE-ALSO BANNERS
             //  on-hover changing
@@ -166,13 +242,15 @@
         ( function() {
         	var youtube = document.querySelectorAll( ".youtube" );
         	for (var i = 0; i < youtube.length; i++) {
-        		var source = "https://img.youtube.com/vi/"+ youtube[i].dataset.embed +"/sddefault.jpg";
+        		/*var source = "https://img.youtube.com/vi/"+ youtube[i].dataset.embed +"/sddefault.jpg";
         		var image = new Image();
         				image.src = source;
-        /*jshint loopfunc:true */				image.addEventListener( "load", (function() {
+        /*jshint loopfunc:true */
+        /*image.addEventListener( "load", (function() {
         					youtube[ i ].appendChild( image );
-        				}( i )) );
-        /*jshint loopfunc:true */				youtube[i].addEventListener( "click", function() {
+        				}( i )) );*/
+        /*jshint loopfunc:true */
+        youtube[i].addEventListener( "click", function() {
         					var iframe = document.createElement( "iframe" );
         							iframe.setAttribute( "frameborder", "0" );
         							iframe.setAttribute( "allowfullscreen", "" );

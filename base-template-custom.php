@@ -34,7 +34,8 @@ use Roots\Sage\Wrapper;
       do_action('get_header');
       get_template_part('templates/header');
     ?>
-    <section id="slider-header" class="pageimage-header pageimage" style="background-image: url(<?php echo $image_test ?>);">
+    <section id="slider-header" class="pageimage-header pageimage">
+      <img src="<?php echo $image_test ?>"/>
     <div class="pageimage-overlay"></div>
     <div class="container pageimage-content"><h1><?php the_title(); ?></h1></div>
     </section>
@@ -43,22 +44,22 @@ use Roots\Sage\Wrapper;
       <div class="content row">
         <div class="searchbox container-fluid"> <!-- search -->
           <div class="innersearch row">
-            <div class="col-12 col-sm-6 col-md-6 col-lg-8">
+            <div class="col-12 col-sm-6 col-md-6 col-lg-6">
               <form role="search" method="get" class="search-form-top" action="<?= esc_url(home_url('/')); ?>">
                   <label class="sr-only"><?php _e('Suche nach:', 'sage'); ?></label>
                         <input id="s" type="search" value="<?= get_search_query(); ?>" name="s" class="search-field form-control" placeholder="<?php _e('Search', 'sage'); ?> <?php bloginfo('name'); ?>" required>
-                        <button type="submit" class="search-submit btn btn-default"><i class="fa fa-search"></i></button>
+                        <button type="submit" class="search-submit btn btn-default" title="Submit Search Form"><i class="fa fa-search"></i></button>
               </form>
             </div>
-            <div class="col-6 col-sm-3 col-md-3 col-lg-2">
+            <div class="col-6 col-sm-3 col-md-3 col-lg-3">
               <div class="contact-form-button">
                   <button class="btn btn-default Modal Popup custom-submit" href="#myModal" data-toggle="modal"><i class="fa fa-envelope-o"></i>
                   <div class="button-text">Kontakt</div></button>
                 </div>
               </div>
-              <div class="col-6 col-sm-3 col-md-3 col-lg-2">
+              <div class="col-6 col-sm-3 col-md-3 col-lg-3">
                 <div class="newsletter-form-button">
-                      <a href="http://eepurl.com/b_IMtj" target="_blank"><button class="btn btn-default custom-submit"><i class="fa fa-newspaper-o"></i>
+                      <a href="http://eepurl.com/b_IMtj" target="_blank" rel="noreferrer"><button class="btn btn-default custom-submit"><i class="fa fa-newspaper-o"></i>
                       <div class="button-text">Newsletter</div></button></a>
                     </div>
                 </div>

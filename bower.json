@@ -9,18 +9,6 @@
   "dependencies": {
     "bootstrap": "git://github.com/twbs/bootstrap.git#v4.0.0-beta",
     "popper.js": "^1.12.3",
-    "slick-carousel": "^1.8.1",
-    "lozad": "^1.2.0",
     "js-cookie": "^2.2.0"
-  },
-  "overrides": {
-    "slick-carousel": {
-      "main": [
-        "./slick/slick.js",
-        "./slick/slick.css",
-        "./slick/slick-theme.css",
-        "./slick/ajax-loader.gif"
-      ]
-    }
   }
 }

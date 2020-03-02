@@ -5,38 +5,34 @@ use Roots\Sage\Wrapper;
 
 ?>
 
-<!-- Script to pull images -->
-<?php
-  $image_test = get_post_meta($post->ID, 'banner', true);
-  if ($image_test == '' ){
-      $image_test = 'https://d3c68j9ltgkr9d.cloudfront.net/skf-slider-' . rand(1,19) . '.jpg';
-  }else{
-      $image_test = get_post_meta($post->ID, 'banner', true);
-  }
-  $image_text = get_post_meta($post->ID, 'image_text', true);
-  if ($image_text == ''){
-  	$image_text = get_the_title($ID);
-  }else{
-  	$image_text = get_post_meta($post->ID, 'image_text', true);
-  }
-?>
-
 <!doctype html>
 <html <?php language_attributes(); ?>>
-<?php get_template_part('templates/head'); ?>
+  <?php get_template_part('templates/head'); ?>
   <body <?php body_class(); ?>>
-    <!--[if lt IE 9]>
+    <!--[if IE]>
       <div class="alert alert-warning">
-        <?php _e('You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.', 'sage'); ?>
+        <?php _e('You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.', 'sage'); ?>
       </div>
     <![endif]-->
     <?php
       do_action('get_header');
       get_template_part('templates/header');
     ?>
-    <section id="slider-header" class="pageimage-header pageimage" style="background-image: url(<?php echo $image_test ?>);">
-    <div class="pageimage-overlay"></div>
-    <div class="container pageimage-content"><h1><?php the_title(); ?></h1></div>
+
+    <section id="slider-header">
+    	<div class="bannercontainer">
+      <div class="video-container" id="video">
+        <video class="lozad video" autoplay loop="true" width="1280" height="720" muted poster="https://d3c68j9ltgkr9d.cloudfront.net/mobile-view-header.jpg">
+            <source class="lozad" type="video/mp4" data-src="https://d3izmgt6jx3fl7.cloudfront.net/skf-video2_short_new.mp4">
+            <source class="lozad" type="video/webm" data-src="https://d3izmgt6jx3fl7.cloudfront.net/skf-video2_short_new.webm">
+            <source class="lozad" type="video/ogg" data-src="https://d3izmgt6jx3fl7.cloudfront.net/skf-video2_short_new.ogg">
+        </video>
+        <div class="mobile-header">
+        <img class="lozad" title="header image" alt="header image" data-src="https://d3c68j9ltgkr9d.cloudfront.net/mobile-view-header.jpg"/>
+        </div>
+      </div>
+
+    	</div>
     </section>
 
     <div class="wrap container-fluid" role="document">
@@ -46,7 +42,7 @@ use Roots\Sage\Wrapper;
             <div class="col-12 col-sm-6 col-md-6 col-lg-6">
               <form role="search" method="get" class="search-form-top" action="<?= esc_url(home_url('/')); ?>">
                   <label class="sr-only"><?php _e('Suche nach:', 'sage'); ?></label>
-                        <input id="s" type="search" value="<?= get_search_query(); ?>" name="s" class="search-field form-control" placeholder="<?php _e('Search', 'sage'); ?> <?php bloginfo('name'); ?>" required>
+                        <input id="s" data-swplive="true" type="search" aria-label="suche" value="<?= get_search_query(); ?>" name="s" class="search-field form-control" placeholder="<?php _e('Search', 'sage'); ?> <?php bloginfo('name'); ?>" required>
                         <button type="submit" class="search-submit btn btn-default" title="Submit Search Form"><i class="fa fa-search"></i></button>
               </form>
             </div>
@@ -57,25 +53,21 @@ use Roots\Sage\Wrapper;
                 </div>
               </div>
               <div class="col-6 col-sm-3 col-md-3 col-lg-3">
-                <div class="newsletter-form-button">
-                      <a href="http://eepurl.com/b_IMtj" target="_blank" rel="noreferrer"><button class="btn btn-default custom-submit"><i class="fa fa-newspaper-o"></i>
-                      <div class="button-text">Newsletter</div></button></a>
-                    </div>
+              <div class="newsletter-form-button">
+                    <a href="http://eepurl.com/b_IMtj" target="_blank" rel="noreferrer"><button class="btn btn-default custom-submit"><i class="fa fa-newspaper-o"></i>
+                    <div class="button-text">Newsletter</div></button></a>
+                  </div>
                 </div>
             </div>
           </div> <!-- /. search -->
-        <div class="main-cont container-fluid">
-          <div class="row">
-        <main class="main">
+
+        <main class="main-cont container-fluid">
           <?php include Wrapper\template_path(); ?>
-          <?php include "/home/master/impressum-content.php"; ?>
         </main><!-- /.main -->
         <?php if (Setup\display_sidebar()) : ?>
           <aside class="sidebar">
             <?php include Wrapper\sidebar_path(); ?>
           </aside><!-- /.sidebar -->
-        </div>
-      </div>
         <?php endif; ?>
       </div><!-- /.content -->
     </div><!-- /.wrap -->

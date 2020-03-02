@@ -5,6 +5,27 @@
 
 /*Custom Search Form*/
 
+remove_action('wp_head', 'print_emoji_detection_script', 7);
+remove_action('wp_print_styles', 'print_emoji_styles');
+remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
+remove_action( 'admin_print_styles', 'print_emoji_styles' );
+remove_action( 'wp_head', 'wp_generator' ) ;
+add_filter('xmlrpc_enabled', '__return_false');
+
+add_filter( 'wpcf7_load_js', '__return_false' );
+add_filter( 'wpcf7_load_css', '__return_false' );
+add_filter('wpcf7_autop_or_not', '__return_false');
+
+// Remove dashicons in frontend for unauthenticated users
+add_action( 'wp_enqueue_scripts', 'bs_dequeue_dashicons' );
+function bs_dequeue_dashicons() {
+    if ( ! is_user_logged_in() ) {
+        wp_deregister_style( 'dashicons' );
+        //wp_deregister_script('jquery');
+        wp_dequeue_script( 'wp-embed' );
+    }
+}
+
 remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
 remove_action( 'wp_print_styles', 'print_emoji_styles' );
 
@@ -186,11 +207,6 @@ class someClass {
 	}
 }
 
-
-function new_excerpt_length($length) {
-	return 30;
-}
-add_filter('excerpt_length', 'new_excerpt_length');
 
 
 // function custom_scripts() {
@@ -384,10 +400,10 @@ function theme_options_validate( $input ) {
 // adapted from http://planetozh.com/blog/2009/05/handling-plugins-options-in-wordpress-28-with-register_setting/
 
 
-
-
-
-
+function custom_excerpt_length( $length ) {
+	return 20;
+}
+add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
 
 
 //  -------------> 		#################### 	<-------------
@@ -396,12 +412,15 @@ function theme_options_validate( $input ) {
 //  -------------> 		#################### 	<-------------
 //  -------------> 		#################### 	<-------------
 
+add_action('pre_get_posts','change_limit_mobile');
+
+
 add_shortcode( 'post_slider', 'post_slider_shortcode' );
 function post_slider_shortcode($atts){
     ob_start();
     $postslider = shortcode_atts(
         [
-            'posts_per_page'    => '10',
+            'posts_per_page'    => 10,
             'news_box_title'    => 'Latest News',
             'news_box_more'     => '',
             'post_type'         => 'post',
@@ -411,6 +430,10 @@ function post_slider_shortcode($atts){
         ],
         $atts
     );
+
+	 if ( wp_is_mobile() ) {
+		$postslider['posts_per_page'] = 5;
+  		}
 
     if( '' == $postslider['taxonomy'] || '' == $postslider['terms'] ) {
       if( '' == $postslider['category'] ) {
@@ -430,7 +453,8 @@ function post_slider_shortcode($atts){
         ];
      }
 
-    }else{
+	 }
+	 else{
         $args = array(
             'posts_per_page'    => $postslider['posts_per_page'],
             'post_type'         => $postslider['post_type'],
@@ -443,6 +467,8 @@ function post_slider_shortcode($atts){
             ),
         );
     }
+
+
 
 //The following lines is for the excerpt more text NEW!!
     if( 'post' != $postslider['post_type'] && '' != $postslider['news_box_more'] ){
@@ -469,20 +495,20 @@ function post_slider_shortcode($atts){
             ?>
 
      <article class="post-<?php echo $temp_id; ?> span4 blog-slider" id="post-<?php echo $temp_id; ?>" itemscope itemtype="http://schema.org/BlogPosting">
+		<div class="blog-slider-inner">
 
-
-    <a href="<?php echo $temp_link; ?>" title="<?php echo $temp_title; ?>">
+    <a href="<?php echo $temp_link; ?>" aria-label="<?php echo $temp_title; ?>" title="<?php echo $temp_title; ?>">
     <div class='post-thumb view third-effect'>
       <div class="blog-slider-image lozad" data-background-image="<?php if ( has_post_thumbnail()) {the_post_thumbnail_url('thumbnail');} ?>"></div>
       <noscript><div class="blog-slider-image" style="background-image:url(<?php if ( has_post_thumbnail()) {the_post_thumbnail_url('thumbnail');} ?>);"></div></noscript>
-  <div class='mask'><a href="<?php echo $temp_link ?>" class="info" title="<?php echo $temp_title; ?>"><i class="fa fa-search"></i></a></div>
+  <div class='mask'><a href="<?php echo $temp_link ?>" class="info" aria-label="<?php echo $temp_title; ?>" title="<?php echo $temp_title; ?>"><i class="fa fa-search"></i></a></div>
 	</div>
 	</a>
 
 
     <header>
         <h2 class='entry-title hvr-underline-from-left' itemprop='name headline'>
-        <a title="<?php echo $temp_title; ?>" rel="bookmark" href="<?php echo $temp_link; ?>">
+        <a title="<?php echo $temp_title; ?>" aria-label="<?php echo $temp_title; ?>" rel="bookmark" href="<?php echo $temp_link; ?>">
         	<?php echo $temp_title; ?>
         </a></h2>
 
@@ -505,11 +531,11 @@ function post_slider_shortcode($atts){
                     <!--END .entry-content-->
                 </div><!--END .hentry-->
 
-        <div class="readmore"><a href="<?php echo $temp_link; ?>">
+        <div class="readmore"><a aria-label="<?php echo $temp_title; ?>" href="<?php echo $temp_link; ?>">
 				<span data-hover="Weiterlesen...">Weiterlesen...</span>
 				</a></div>
 
-
+	 				</div>
             </article>
 
         <?php endwhile;
@@ -522,6 +548,89 @@ function post_slider_shortcode($atts){
 };
 
 
+add_shortcode( 'hero_post', 'hero_post_shortcode');
+function hero_post_shortcode($atts){
+	ob_start();
+	$heropost = shortcode_atts(
+		[
+			'posts_per-page'	=> '1',
+			'post_type'			=> 'post',
+			'category'			=> 'hero-beitrag'
+		],
+		$atts
+	);
+	
+	$hero = new WP_Query($args);
+
+	if ( $hero->have_posts() ) :
+		while( $hero->have_posts() ) : $hero->the_post();
+			$hero_id = $post->ID;
+			$hero_title = get_the_title();
+			$hero_link = get_permalink();
+			$hero_content = get_the_excerpt();
+			$hero_thumbnail = get_the_post_thumbnail_url();
+			$hero_image_url = get_the_post_thumbnail_url();
+			?>
+
+		<?php echo $hero_title ?>
+		<?php echo $hero_link ?>
+		<?php echo $hero_content ?>
+		<?php echo $hero_thumbnail ?>
+		<?php echo $hero_thumbnail_url ?>
+
+	<article class="post-<?php echo $hero_id; ?>" id="post-<?php echo $hero_id; ?>" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="blog-slider-inner">
+
+	<a href="<?php echo $hero_link; ?>" aria-label="<?php echo $temp_title; ?>" title="<?php echo $temp_title; ?>">
+	<div class='post-thumb view third-effect'>
+		<div class="blog-slider-image lozad" data-background-image="<?php if ( has_post_thumbnail()) {the_post_thumbnail_url('thumbnail');} ?>">
+		</div>
+	<noscript>
+		<div class="blog-slider-image" style="background-image:url(<?php if ( has_post_thumbnail()) {the_post_thumbnail_url('thumbnail');} ?>);">
+		</div>
+	</noscript>
+		<div class='mask'>
+			<a href="<?php echo $hero_link ?>" class="info" aria-label="<?php echo $hero_title; ?>" title="<?php echo $temp_title; ?>">
+				<i class="fa fa-search"></i>
+			</a>
+		</div>
+	</div>
+	</a>
+
+   <header>
+		<a title="<?php echo $hero_title; ?>" aria-label="<?php echo $hero_title; ?>" rel="bookmark" href="<?php echo $hero_title; ?>">
+			<h2 class='entry-title hvr-underline-from-left' itemprop='name headline'>
+				<?php echo $hero_title; ?>
+			</h2>
+		</a>
+	</header>
+
+<!--BEGIN .entry-content-->
+
+	<div class="entry-summary" itemprop="articleBody">
+		<p>
+			<?php echo $hero_content; ?>
+		</p>
+		<!--END .entry-content-->
+	</div><!--END .hentry-->
+
+	<div class="readmore"><a aria-label="<?php echo $hero_title; ?>" href="<?php echo $hero_link; ?>">
+		<span data-hover="Weiterlesen...">Weiterlesen...</span>
+		</a>
+	</div>
+
+	</div>
+</article>
+
+
+		<?php endwhile;
+		$content = ob_get_contents();
+
+		return $content;
+	endif;
+
+	wp_reset_postdata();
+};
 
 
 //  -------------> 		#################### 	<-------------
@@ -535,7 +644,7 @@ function post_list_shortcode($atts){
     ob_start();
     $postlist = shortcode_atts(
         [
-            'posts_per_page'    => '8',
+            'posts_per_page'    => '6',
             'news_box_title'    => 'Latest News',
             'news_box_more'     => '',
             'post_type'         => 'post',
@@ -691,11 +800,11 @@ function youtubeslider_shortcode2($atts){
             // wp_trim_words function NEW!!
             $content = get_the_content();
             $trimmed_content = wp_trim_words( $content, 25 );
-			$temp2_title = get_the_title();
-			$temp2_link = get_permalink();
-			$temp2_datetime = get_the_date();
-			$temp2_authorname = get_the_author();
-			$temp2_content = get_the_excerpt();
+				$temp2_title = get_the_title();
+				$temp2_link = get_permalink();
+				$temp2_datetime = get_the_date();
+				$temp2_authorname = get_the_author();
+				$temp2_content = get_the_excerpt();
 
             // wp_trim_words function
             ?>
