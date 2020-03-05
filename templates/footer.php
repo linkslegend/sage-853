@@ -39,3 +39,11 @@
         </div> <!-- /.modal-content -->
     </div> <!-- /.modal-dialog -->
 </div><!-- End modal -->
+
+<!-- Lozad.js -->
+<script defer type="text/javascript" src="https://cdn.jsdelivr.net/npm/lozad"></script>
+<!--tiny slider-->
+<script defer type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/tiny-slider.css">
+<!--[if (lt IE 9)]><script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.helper.ie8.js"></script><![endif]-->
+<script defer type="text/javascript" src="https://d2o0x3khes243j.cloudfront.net/b20ad1bea8_fonta.js"></script>
