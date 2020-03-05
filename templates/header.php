@@ -10,7 +10,7 @@
       <div class="col-md-3">
     	<a class="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>">
       <!--<img class="standard logo" src="/wp-content/uploads/<?php $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['logo1'].''); ?>" alt="<?php bloginfo('name'); ?>" itemprop="logo">-->
-      <img class="standard logo" src="https://www.dichtungen-muenchen.com/wp-content/uploads/dichtungen_muenchen_logo.png" itemprop="logo">
+      <img class="standard logo" src="/wp-content/uploads/<?php $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['logo1'].''); ?>" alt="<?php bloginfo('name'); ?>" itemprop="logo">
         
       </a>
       <button class="navbar-toggle collapsed hamburger" id="hamburger-1" type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-controls="bs-example-navbar-collapse-1" aria-expanded="false" aria-label="Toggle navigation">
@@ -35,9 +35,9 @@
         ?>
         </div>
         <div class="menu-inner-bottom d-xl-none d-lg-none d-md-none">
-        <a href="mailto:info@hzylinder-hydraulik.com">
+        <a href="mailto:<?php $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['email'].''); ?>">
           <button class="btn btn-default"><i class="fa fa-envelope" aria-hidden="true"></i>
-            <div class="button-text">info@hzylinder-hydraulik.com</div>
+            <div class="button-text"><?php $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['email'].''); ?></div>
          </button>
         </a>
 
@@ -66,8 +66,7 @@
     <div class="myAlert-inner">
       <a class="close in" id="cookie-message-close" data-dismiss="alert" href="#">&times;</a>
       <div class="alert-content">
-      Besuchen Sie uns auf der Internationale Fachmesse für Blechbearbeitung am 5.-8. November 2019 in Stuttgart. Halle 8 – Stand 8203
-<?php include "/home/master/header-content.php"; ?>
+        <?php include "/home/master/header-content.php"; ?>
       </div>
     </div>
     </div>
