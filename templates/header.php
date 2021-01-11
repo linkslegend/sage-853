@@ -9,9 +9,8 @@
     <!-- Brand and toggle get grouped for better mobile display -->
       <div class="col-md-3">
     	<a class="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>">
-      <!--<img class="standard logo" src="/wp-content/uploads/<?php $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['logo1'].''); ?>" alt="<?php bloginfo('name'); ?>" itemprop="logo">-->
       <img class="standard logo" src="/wp-content/uploads/<?php $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['logo1'].''); ?>" alt="<?php bloginfo('name'); ?>" itemprop="logo">
-
+        
       </a>
       <button class="navbar-toggle collapsed hamburger" id="hamburger-1" type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-controls="bs-example-navbar-collapse-1" aria-expanded="false" aria-label="Toggle navigation">
                   <span class="line"></span>
@@ -35,9 +34,9 @@
         ?>
         </div>
         <div class="menu-inner-bottom d-xl-none d-lg-none d-md-none">
-        <a href="mailto:<?php $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['email'].''); ?>">
+        <a href="mailto:info@hzylinder-hydraulik.com">
           <button class="btn btn-default"><i class="fa fa-envelope" aria-hidden="true"></i>
-            <div class="button-text"><?php $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['email'].''); ?></div>
+            <div class="button-text">info@hzylinder-hydraulik.com</div>
          </button>
         </a>
 
@@ -45,14 +44,14 @@
           <button class="btn btn-default mt-3 mb-4"><i class="fa fa-phone-square" aria-hidden="true"></i>
             <div class="button-text">+49-7142-593-0</div>
          </button>
-        </a>
-      </span>
+        </a></span>
 
           <ul>
-            <li><?php $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['gmap-value'].''); ?></li>
+            <li>Robert-Bosch-Straße 11</li>
+            <li>74321 Bietigheim-Bissingen</li>
           </ul>
-          
         </div>
+
       </div>
       </div>
     </div>
@@ -66,7 +65,6 @@
     <div class="myAlert-inner">
       <a class="close in" id="cookie-message-close" data-dismiss="alert" href="#">&times;</a>
       <div class="alert-content">
-        <?php include "/home/master/header-content.php"; ?>
       </div>
     </div>
     </div>

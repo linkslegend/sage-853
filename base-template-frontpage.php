@@ -23,10 +23,10 @@ use Roots\Sage\Wrapper;
         <div class="container-fluid">
           <div class="bannercontainer">
             <div class="video-container" id="video">
-              <video class="lozad video" autoplay loop="true" width="1280" height="720" muted poster="https://d3c68j9ltgkr9d.cloudfront.net/mobile-view-header.jpg">
-                  <source class="lozad" type="video/mp4" data-src="https://d3izmgt6jx3fl7.cloudfront.net/skf-video2_short_new.mp4">
-                  <source class="lozad" type="video/webm" data-src="https://d3izmgt6jx3fl7.cloudfront.net/skf-video2_short_new.webm">
-                  <source class="lozad" type="video/ogg" data-src="https://d3izmgt6jx3fl7.cloudfront.net/skf-video2_short_new.ogg">
+              <video class="lozad video" autoplay loop="true" width="1280" height="720" muted poster="https://bilder-dichtungen.s3-eu-west-1.amazonaws.com/header_video_image.jpg">
+                  <source class="lozad" type="video/mp4" data-src="https://d3izmgt6jx3fl7.cloudfront.net/skf_industrial_seals_teaser.mp4">
+                  <source class="lozad" type="video/webm" data-src="https://d3izmgt6jx3fl7.cloudfront.net/skf_industrial_seals_teaser.webm">
+                  <source class="lozad" type="video/ogg" data-src="https://d3izmgt6jx3fl7.cloudfront.net/skf_industrial_seals_teaser.ogg">
               </video>
               <div class="mobile-header">
               <img title="header image" alt="header image" class="lozad" data-src="https://d3c68j9ltgkr9d.cloudfront.net/mobile-view-header.jpg"/>
@@ -42,7 +42,7 @@ use Roots\Sage\Wrapper;
           <div class="innersearch row">
             <div class="col-12 col-sm-6 col-md-6 col-lg-6">
               <form role="search" method="get" class="search-form-top" action="<?= esc_url(home_url('/')); ?>">
-                  <label class="sr-only"><?php _e('Suche nach:', 'sage'); ?></label>
+                  <label for="s" class="sr-only"><?php _e('Suche nach:', 'sage'); ?></label>
                         <input id="s" data-swplive="true" type="search" value="<?= get_search_query(); ?>" name="suche" class="search-field form-control" placeholder="<?php _e('Search', 'sage'); ?> <?php bloginfo('name'); ?>" required>
                         <button type="submit" class="search-submit btn btn-default" title="Submit Search Form"><i class="fa fa-search"></i></button>
               </form>

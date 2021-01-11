@@ -22,11 +22,11 @@ use Roots\Sage\Wrapper;
     <section id="slider-header">
     	<div class="bannercontainer">
       <div class="video-container" id="video">
-        <video class="lozad video" autoplay loop="true" width="1280" height="720" muted poster="https://d3c68j9ltgkr9d.cloudfront.net/mobile-view-header.jpg">
-            <source class="lozad" type="video/mp4" data-src="https://d3izmgt6jx3fl7.cloudfront.net/skf-video2_short_new.mp4">
-            <source class="lozad" type="video/webm" data-src="https://d3izmgt6jx3fl7.cloudfront.net/skf-video2_short_new.webm">
-            <source class="lozad" type="video/ogg" data-src="https://d3izmgt6jx3fl7.cloudfront.net/skf-video2_short_new.ogg">
-        </video>
+          <video class="lozad video" autoplay loop="true" width="1280" height="720" muted poster="https://d3c68j9ltgkr9d.cloudfront.net/mobile-view-header.jpg">
+              <source class="lozad" type="video/mp4" data-src="https://d3izmgt6jx3fl7.cloudfront.net/skf_industrial_seals_teaser.mp4">
+              <source class="lozad" type="video/webm" data-src="https://d3izmgt6jx3fl7.cloudfront.net/skf_industrial_seals_teaser.webm">
+              <source class="lozad" type="video/ogg" data-src="https://d3izmgt6jx3fl7.cloudfront.net/skf_industrial_seals_teaser.ogg">
+          </video>
         <div class="mobile-header">
         <img class="lozad" title="header image" alt="header image" data-src="https://d3c68j9ltgkr9d.cloudfront.net/mobile-view-header.jpg"/>
         </div>

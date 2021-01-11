@@ -34,13 +34,9 @@ use Roots\Sage\Wrapper;
       do_action('get_header');
       get_template_part('templates/header');
     ?>
-    <section id="slider-header" class="pageimage-header">
-      <div class="container-fluid">
-        <div class="pageimage">
-          <img src="<?php echo $image_test ?>"/>
-          <h1><?php the_title(); ?></h1>
-        </div>
-      </div>
+    <section id="slider-header" class="pageimage-header pageimage" style="background-image: url(<?php echo $image_test ?>);">
+    <div class="pageimage-overlay"></div>
+    <div class="container pageimage-content"><h1><?php the_title(); ?></h1></div>
     </section>
 
     <div class="wrap container-fluid" role="document">

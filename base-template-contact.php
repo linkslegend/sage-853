@@ -9,9 +9,8 @@ use Roots\Sage\Wrapper;
 <?php get_template_part('templates/head'); ?>
 
 <script async type="text/javascript">
-  var directionDisplay;
+var directionDisplay;
   var directionsService = new google.maps.DirectionsService();
-  var geocoder = new google.maps.Geocoder();
   var map;
   jQuery(function(){
     jQuery('#submit').click(function(){
@@ -35,37 +34,6 @@ use Roots\Sage\Wrapper;
     map = new google.maps.Map(document.getElementById('map_canvas'), mapOptions);
     directionsDisplay.setPanel(document.getElementById('directionsPanel'), mapOptions);
     directionsDisplay.setMap(map);
-  }
-
-  /* Geolocation */
-  function foundYou(position) {
-  // convert the position returned by the geolocation API to a google coordinate object
-  var latlng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
-  // then try to reverse geocode the location to return a human-readable address
-  geocoder.geocode({'latLng': latlng}, function(results, status) {
-    if (status == google.maps.GeocoderStatus.OK) {
-      // if the geolocation was recognized and an address was found
-      if (results[0]) {
-        // add a marker to the map on the geolocated point
-        marker = new google.maps.Marker({
-            position: latlng,
-            map: map
-        });
-        // compose a string with the address parts
-        var address = results[0].address_components[1].long_name+' '+results[0].address_components[0].long_name+', '+results[0].address_components[3].long_name
-        // set the located address to the link, show the link and add a click event handler
-        $('.autoLink span').html(address).parent().show().click(function(){
-          // onclick, set the geocoded address to the start-point formfield
-          $('#routeStart').val(address);
-          // call the calcRoute function to start calculating the route
-          calcRoute();
-        });
-      }
-    } else {
-      // if the address couldn't be determined, alert and error with the status message
-      alert("Geocoder failed due to: " + status);
-      }
-     });
   }
 
   //Find the Start and End Destination on google Map

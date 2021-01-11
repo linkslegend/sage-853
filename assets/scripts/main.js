@@ -29,7 +29,6 @@
         observer.observe();
       });
 
-
         $('#menu-menu-2 .dropdown-menu').on({
         	"click":function(e){
               e.stopPropagation();
@@ -47,18 +46,17 @@
         });
 
         //Alert & Cookies
-            $('#cookie-message-close').click(function(){
-                $('#myAlert').addClass("slide-out");
-                Cookies.set('cookie-message-bar', true, { expires: 7 });
-            });
-            if (Cookies.get("cookie-message-bar"))
-            {
-              $('#myAlert').css({"visibility":"hidden", "z-index":"-1"});
-            }
-            else{
-              $('#myAlert').css({"visibility":"visible", "z-index":"3"});
-            }
-
+        $('#cookie-message-close').click(function(){
+            $('#myAlert').addClass("slide-out");
+            Cookies.set('cookie-message-bar', true, { expires: 7 });
+        });
+        if (Cookies.get("cookie-message-bar"))
+        {
+          $('#myAlert').css({"visibility":"hidden", "z-index":"-1"});
+        }
+        else{
+          $('#myAlert').css({"visibility":"visible", "z-index":"3"});
+        }
 
         $('body').popover({
           selector: '[data-popover]',
@@ -67,7 +65,7 @@
           placement: 'bottom',
           delay: {show: 50, hide: 50}
         });
-        
+
         jQuery(function($){
           if ( $('#owl-blog-posts').length > 0 ) {
             var slider1 = tns({
@@ -81,7 +79,7 @@
               disable: false,
               autoplay: false,
               responsive: {
-                400: {
+                300: {
                     items: 1,
                     disable: true
                 },
@@ -109,7 +107,7 @@
               disable: false,
               autoplay: false,
               responsive: {
-                400: {
+                300: {
                     items: 1,
                     disable: true
                 },
@@ -137,7 +135,7 @@
               autoplay: false,
               disable: false,
               responsive: {
-                400: {
+                300: {
                     items: 1,
                     disable: true
                 },
@@ -165,7 +163,7 @@
               autoplay: false,
               disable: false,
               responsive: {
-                400: {
+                300: {
                     items: 1,
                     disable: true
                 },
@@ -193,7 +191,7 @@
               autoplay: false,
               disable: false,
               responsive: {
-                400: {
+                300: {
                     items: 1,
                     disable: true
                 },
@@ -208,6 +206,7 @@
               },
             });
           }
+          
         });
 
         jQuery(function($){
@@ -261,14 +260,11 @@
         	}
         } )();
 
-
         $(".keyword-list a").click(function(e){
            e.preventDefault();
            slideIndex = $(this).index();
            $( '.single-featured2' ).slick('slickGoTo', parseInt(slideIndex) );
         });
-
-
 
         $(document).ready(function () {
           var trigger = $('.hamburger'),
@@ -300,8 +296,6 @@
 
 
         });
-
-
       },
       finalize: function() {
         // JavaScript to be fired on all pages, after page specific JS is fired

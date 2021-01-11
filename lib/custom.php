@@ -412,9 +412,6 @@ add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
 //  -------------> 		#################### 	<-------------
 //  -------------> 		#################### 	<-------------
 
-add_action('pre_get_posts','change_limit_mobile');
-
-
 add_shortcode( 'post_slider', 'post_slider_shortcode' );
 function post_slider_shortcode($atts){
     ob_start();
@@ -863,24 +860,14 @@ function messen_shortcode(){
         return $list;
 };
 
-
-
-
-
-
-
 // Wp Auto P and BR
-
 remove_filter( 'the_content', 'wpautop' );
 remove_filter( 'the_excerpt', 'wpautop' );
-
-
 //  -------------> 		#################### 	<-------------
 //  -------------> 		#################### 	<-------------
 //  ------------->  		User Data 			<-------------
 //  -------------> 		#################### 	<-------------
 //  -------------> 		#################### 	<-------------
-
 function modify_contact_methods($profile_fields) {
 
 	// Add new fields
@@ -900,11 +887,6 @@ function modify_contact_methods($profile_fields) {
 	return $profile_fields;
 }
 add_filter('user_contactmethods', 'modify_contact_methods');
-
-
-
-
-
 
 
 //  -------------> 		#################### 	<-------------
@@ -1313,7 +1295,7 @@ function intermac_social_sharing_buttons($content) {
 
 		// Add sharing button at the end of page/page content
 		$content .= '<div id="intermac-content-bottom" class="intermac-content-wrapper"><ul class="intermac-networks-btns-wrapper intermac-networks-btns-content">';
-    $content .= '<li><a class="intermac-network-btn intermac-facebook intermac-first" href="'.$facebookURL.'" target="_blank">Facebook</a></li>';
+    	$content .= '<li><a class="intermac-network-btn intermac-facebook intermac-first" href="'.$facebookURL.'" target="_blank">Facebook</a></li>';
 		$content .= '<li><a class="intermac-network-btn intermac-twitter" href="'. $twitterURL .'" target="_blank">Twitter</a></li>';
 		//$content .= '<li><a class="intermac-network-btn intermac-whatsapp" href="'.$whatsappURL.'" target="_blank">WhatsApp</a></li>';
 		$content .= '<li><a class="intermac-network-btn intermac-google-plus" href="'.$googleURL.'" target="_blank">Google+</a></li>';
@@ -1328,3 +1310,30 @@ function intermac_social_sharing_buttons($content) {
 	}
 };
 add_filter( 'the_content', 'intermac_social_sharing_buttons');
+
+add_filter('sage/display_sidebar', function ($display) {
+	static $display;
+
+	isset($display) || $display = in_array(true, [
+	  // The sidebar will be displayed if any of the following return true
+	  is_single(),
+	  is_404(),
+	  is_page('produkte'),
+	  is_page('materialien'),
+	  is_page('grossdichtungen'),
+	  is_page('formteile'),
+	  is_page('wasserstrahlteile'),
+	  is_page('kunststofftechnik'),
+	  is_page('materialien'),
+	  is_page('zylinderservice'),
+	  is_page('polyurethane'),
+	  is_page('elastomere'),
+	  is_page('thermoplaste'),
+	  is_page('chemikalienbestaendigkeit'),
+	  is_page_template('template-agb.php'),
+	  is_page_template('template-cookies.php'),
+	  is_page_template('template-standorte.php'),
+	  is_page_template('template-frontpage_produktseite.php')
+	]);
+	return $display;
+});

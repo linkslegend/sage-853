@@ -102,55 +102,58 @@ use Roots\Sage\Wrapper;
               </div>
             </div>
           </div> <!-- /. search -->
+        </div>
         <div class="main-cont container-fluid">
           <div class="row">
-        <main class="main">
-          <?php include Wrapper\template_path(); ?>
-        </main><!-- /.main -->
-        <?php if (Setup\display_sidebar()) : ?>
-          <aside class="sidebar">
-            <?php include Wrapper\sidebar_path(); ?>
-          </aside><!-- /.sidebar -->
+            <main class="main">
+              <?php include Wrapper\template_path(); ?>
+            </main><!-- /.main -->
+            <?php if (Setup\display_sidebar()) : ?>
+            <aside class="sidebar">
+              <?php include Wrapper\sidebar_path(); ?>
+            </aside><!-- /.sidebar -->
+          </div>
         </div>
-      </div>
-        <?php endif; ?>
+          <?php endif; ?>
+        </div>
       </div><!-- /.content -->
     </div><!-- /.wrap -->
+
+    <?php if ( is_page( 'chemikalienbestaendigkeit' ) ) {?>
+      <!-- Start Tabelle Modal -->
+      <div aria-hidden="true" role="dialog" tabindex="-1" id="skftabelle1" class="modal fade testclass">
+          <div class="modal-dialog">
+              <div class="modal-content">
+              <button aria-hidden="true" data-dismiss="modal" class="close contact-form-close" type="button">x</button>
+              <div class="download-pdf"><a target="_blank" href="http://bit.ly/skf-chemlist">PDF</a></div>
+                  <div class="modal-body">
+                    <?php echo file_get_contents('http://www.skf.com/pages/jsp/catalogue-table.jsp?id=tcm:49-6862'); ?>
+                  </div>
+                </div><!-- /.modal-body -->
+              </div> <!-- /.modal-content -->
+          </div> <!-- /.modal-dialog -->
+      </div><!-- End modal -->
+
+      <!-- Start Tabelle 2 Modal -->
+      <div aria-hidden="true" role="dialog" tabindex="-1" id="skftabelle2" class="modal fade testclass">
+          <div class="modal-dialog">
+              <div class="modal-content">
+              <button aria-hidden="true" data-dismiss="modal" class="close contact-form-close" type="button">x</button>
+              <div class="download-pdf"><a target="_blank" href="http://bit.ly/skf-dichtlipp">PDF</a></div>
+                  <div class="modal-body">
+                    <?php echo file_get_contents('http://skf.com/pages/jsp/catalogue-table.jsp?id=tcm:49-6863'); ?>
+                  </div>
+                </div><!-- /.modal-body -->
+              </div> <!-- /.modal-content -->
+          </div> <!-- /.modal-dialog -->
+      </div><!-- End modal -->
+    <?php } ?>
+
     <?php
       do_action('get_footer');
       get_template_part('templates/footer');
       wp_footer();
     ?>
-
-      <?php if ( is_page( 'chemikalienbestaendigkeit' ) ) {?>
-        <!-- Start Tabelle Modal -->
-        <div aria-hidden="true" role="dialog" tabindex="-1" id="skftabelle1" class="modal fade testclass">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                <button aria-hidden="true" data-dismiss="modal" class="close contact-form-close" type="button">x</button>
-                <div class="download-pdf"><a target="_blank" href="http://bit.ly/skf-chemlist">PDF</a></div>
-                    <div class="modal-body">
-                      <?php echo file_get_contents('http://www.skf.com/pages/jsp/catalogue-table.jsp?id=tcm:49-6862'); ?>
-                    </div>
-                  </div><!-- /.modal-body -->
-                </div> <!-- /.modal-content -->
-            </div> <!-- /.modal-dialog -->
-        </div><!-- End modal -->
-
-        <!-- Start Tabelle 2 Modal -->
-        <div aria-hidden="true" role="dialog" tabindex="-1" id="skftabelle2" class="modal fade testclass">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                <button aria-hidden="true" data-dismiss="modal" class="close contact-form-close" type="button">x</button>
-                <div class="download-pdf"><a target="_blank" href="http://bit.ly/skf-dichtlipp">PDF</a></div>
-                    <div class="modal-body">
-                      <?php echo file_get_contents('http://skf.com/pages/jsp/catalogue-table.jsp?id=tcm:49-6863'); ?>
-                    </div>
-                  </div><!-- /.modal-body -->
-                </div> <!-- /.modal-content -->
-            </div> <!-- /.modal-dialog -->
-        </div><!-- End modal -->
-      <?php } ?>
 
   </body>
 </html>

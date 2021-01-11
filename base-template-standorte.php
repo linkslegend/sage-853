@@ -9,12 +9,14 @@ use Roots\Sage\Wrapper;
 <?php get_template_part('templates/head'); ?>
 
 <link rel="stylesheet" type="text/css" href="https://intermac.de/googlemaps/skf.css">
-<script type="text/javascript" src="https://s3-eu-west-1.amazonaws.com/intermac/scripte/markerclusterer.js"></script>
-<script type="text/javascript" src="https://s3-eu-west-1.amazonaws.com/intermac/scripte/downloadxml.js"></script>
-<script type="text/javascript">
-jQuery(".panel .accordion-body").each(function(index, element){
-  jQuery(element).addClass(index == 0 ? "in" : "");
-});
+<script async type="text/javascript" src="https://s3-eu-west-1.amazonaws.com/intermac/scripte/markerclusterer.js"></script>
+<script async type="text/javascript" src="https://s3-eu-west-1.amazonaws.com/intermac/scripte/downloadxml.js"></script>
+<script async type="text/javascript">
+
+/*jQuery(".panel .accordion-body").each(function(index, element){
+	jQuery(element).addClass(index == 0 ? "in" : "");
+});*/
+
 //<![CDATA[
 // this variable will collect the html which will eventually be placed in the side_bar
 var side_bar_html = "";
@@ -69,7 +71,6 @@ downloadUrl("https://intermac.de/googlemaps/skf.xml", function(doc) {
 	var plz = markers[i].getAttribute("plz");
 	var town = markers[i].getAttribute("town");
 	var tel = markers[i].getAttribute("tel");
-	var fax = markers[i].getAttribute("fax");
 	var mail = markers[i].getAttribute("mail");
 	var web = markers[i].getAttribute("web");
 	var country = markers[i].getAttribute("country");
@@ -110,7 +111,6 @@ downloadUrl("https://intermac.de/googlemaps/skf.xml", function(doc) {
 							<li class="address ' + id + ' ' + name2 + '">' + address + '</li> \
 							<li class="plztown ' + id + ' ' + name2 + '">' +plz+'&nbsp;'+town+ '</li> \
 							<li class="tel">' + tel + '</li> \
-							<li class="fax ' + name2 + '">' + fax + '</li> \
 						</ul> \
 					</div> \
 					</div> \
@@ -229,12 +229,12 @@ maxWidth:300
                     Robert-Bosch-Straße  11<br />
                     D-74321 Bietigheim-Bissingen<br />
                     Tel.: +49 (0) 7142 593 0<br />
-                    Fax: +49 (0) 7142 593 110<br />
+                    <!--Fax: +49 (0) 7142 593 110<br />-->
                     seals.bietigheim@skf.com<br />
                     www.skf.de/dichtungen<br />
                   </div>
                 <div class="zentrale-image col-sm-6">
-                  <img src="https://intermac.de/googlemaps/skf-standorte.png">
+                  <img src="https://intermac.de/googlemaps/skf-standorte-2.png">
                 </div>
               </div>
             </div>
