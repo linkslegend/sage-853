@@ -83,8 +83,6 @@ function custom_upload_mimes ( $existing_mimes=array() ) {
 	return $existing_mimes;
 }
 
-
-
 function new_excerpt_more( $more ) {
   global $post;
   if ($post->post_type == 'post'){
@@ -1318,7 +1316,6 @@ add_filter('sage/display_sidebar', function ($display) {
 	  // The sidebar will be displayed if any of the following return true
 	  is_single(),
 	  is_404(),
-	  is_page('produkte'),
 	  is_page('materialien'),
 	  is_page('grossdichtungen'),
 	  is_page('formteile'),

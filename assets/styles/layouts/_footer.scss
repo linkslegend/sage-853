@@ -798,9 +798,9 @@ offset | guillotine-reverse | half-slide | sqkwoosh | tunnel>"
 /* See also */
 .see-also-header{
 	border-bottom: 1px solid #e2e2e2;
-    display: block;
-    height: 38px;
-    margin-bottom: 14px;}
+  display: block;
+  height: 38px;
+  margin-bottom: 14px;}
 .see-also-header h2 {
   margin-bottom: 0;
   margin-top: 20px;
@@ -830,11 +830,15 @@ offset | guillotine-reverse | half-slide | sqkwoosh | tunnel>"
 #owl-product-posts .slick-slide {margin: 5px}
 .home .see-also{width: 100%;height: 125px;border-radius: 8px;}
 .produkte .see-also,
-.materialien .see-also{margin: 4px 5px 10px; float: none; width: 48%;border-radius: 8px;}
+.materialien .see-also{margin: 0; float: none; width: 33.3333%;border-radius: 8px;}
 .produkte .see-also > a,
 .materialien .see-also > a {width: 100%;}
 .produkte .see-also > a > span,
 .materialien .see-also > a > span {width: 100%;}
+
+.see-also-inner {
+  padding: 15px;
+}
 
 .see-also i{
 	position: absolute;
@@ -891,7 +895,7 @@ offset | guillotine-reverse | half-slide | sqkwoosh | tunnel>"
 @media (min-width: 1200px) {
 .home .see-also{/*width: 350px!important;*/height: 150px;}
 .produkte .see-also,
-.materialien .see-also{margin: 4px 5px 10px; float: none; width: 48%;}
+.materialien .see-also{margin: 0; float: left; width: 33.3333%;}
 .see-also {width: 100%;height:150px;}
 .see-also > a {
     height: 150px;
@@ -935,7 +939,7 @@ footer .col-md-4.text-7.widget_text{
     width: 100%;
     height: 130px;}
 .materialien .see-also,
-.produkte .see-also {width: 49%;margin: 5px 0px 0px;}
+.produkte .see-also {width: 50%; margin: 0;}
 .produkte .see-also > a,
 .materialien .see-also > a{width: 100%;}
 .produkte .see-also > a > span,
@@ -959,7 +963,7 @@ footer .col-md-4.text-7.widget_text{
 .produkte .see-also > a > span,
 .materialien .see-also > a > span{width: 100%;}
 .produkte .see-also,
-.materialien .see-also{width: 100%;margin: 0px 0px 10px;}
+.materialien .see-also{width: 100%;margin: 0;}
 
 .see-also {width: 100%; height:150px;}
 .see-also > a {
@@ -995,7 +999,7 @@ footer .col-md-4.text-7.widget_text{
 .produkte .see-also > a > span,
 .materialien .see-also > a > span{width: 100%;}
 .produkte .see-also,
-.materialien .see-also{margin: 0px 0px 10px;}
+.materialien .see-also{margin: 0;}
 }
 
 .bg-grey {

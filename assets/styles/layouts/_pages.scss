@@ -803,7 +803,8 @@ h2,
   line-height: 1.2rem;
 }
 body.produkte h2 {
-  margin-bottom: 15px;
+  margin: 15px 0;
+  padding: 0 10px;
 }
 h3.entry-title {
   font-size: 16px;
@@ -811,6 +812,7 @@ h3.entry-title {
 }
 h4 {
   font-size: 1.1rem;
+  line-height: 1.15;
 }
 .h6,
 h6 {
@@ -1493,6 +1495,83 @@ body.blog .main-cont.container-fluid > .row {
 .navigation.posts-navigation {
   text-align: center;
   padding: 10px;
+}
+
+.row.product {
+  margin-right: -15px;
+  margin-left: -15px;
+}
+
+/* Card layout */
+.product-card {
+  margin: 0; 
+  float: none; 
+  width: 33.3333%;
+  border-radius: 8px;
+  transition: all 0.25s;
+}
+
+.product-card:hover {
+  background: #2594cc;
+  color: #fff;
+  box-shadow: 0 0 15px 0 rgba(0,0,0, 0.2);
+}
+
+.product-card-inner {
+  padding: 20px;
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.product-card-inner:hover {
+  color: #fff;
+}
+
+.product-card-inner .image {
+  border-radius: 100%;
+  height: 200px;
+  width: 200px;
+  border: 3px solid #2594cc;
+  margin: 0 auto;
+  background-position: 50%;
+  background-repeat: no-repeat;
+  transition: all .3s;
+  position: absolute;
+  transform: translate(-50%, 20px);
+  left: 50%;
+}
+
+.product-card-inner .text {
+  margin-top: 250px;
+}
+
+.product-card-inner:hover .image {
+  border: 3px solid #fff;
+  height: 240px;
+  width: 240px;
+  transform: translate(-50%, 0);
+}
+
+.product-card-inner .image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  margin: 0 auto;
+}
+
+.product-card-inner h3 {
+  padding: 20px 0;
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.product-card-inner .text p {
+  font-size: 1rem;
+  margin: 0;
 }
 
 .nav-links {
