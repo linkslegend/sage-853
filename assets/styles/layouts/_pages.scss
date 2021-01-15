@@ -799,12 +799,14 @@ h1.front {
 }
 h2,
 .h2 {
-  font-size: 18px;
-  line-height: 1.2rem;
+  font-size: 1.3rem;
+  line-height: 1.7rem;
+  font-weight: 600;
+  color: rgb(0, 77, 124);
 }
 body.produkte h2 {
   margin: 15px 0;
-  padding: 0 10px;
+  padding: 0;
 }
 h3.entry-title {
   font-size: 16px;
@@ -1503,6 +1505,10 @@ body.blog .main-cont.container-fluid > .row {
 }
 
 /* Card layout */
+.content-header {
+  margin: 15px 0 25px 0;
+}
+
 .product-card {
   margin: 0; 
   float: none; 
@@ -1534,6 +1540,7 @@ body.blog .main-cont.container-fluid > .row {
   height: 200px;
   width: 200px;
   border: 3px solid #2594cc;
+  background-color: #fff;
   margin: 0 auto;
   background-position: 50%;
   background-repeat: no-repeat;
@@ -1572,6 +1579,11 @@ body.blog .main-cont.container-fluid > .row {
 .product-card-inner .text p {
   font-size: 1rem;
   margin: 0;
+  color: rgb(86, 100, 111);
+}
+
+.product-card-inner:hover .text p {
+  color: #fff;
 }
 
 .nav-links {

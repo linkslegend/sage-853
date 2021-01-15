@@ -1316,12 +1316,10 @@ add_filter('sage/display_sidebar', function ($display) {
 	  // The sidebar will be displayed if any of the following return true
 	  is_single(),
 	  is_404(),
-	  is_page('materialien'),
 	  is_page('grossdichtungen'),
 	  is_page('formteile'),
 	  is_page('wasserstrahlteile'),
 	  is_page('kunststofftechnik'),
-	  is_page('materialien'),
 	  is_page('zylinderservice'),
 	  is_page('polyurethane'),
 	  is_page('elastomere'),
