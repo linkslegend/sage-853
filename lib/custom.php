@@ -216,7 +216,7 @@ class someClass {
 
 /*Image Size*/
 add_image_size( 'thumbnail', 350, 200 ); // 220 pixels wide by 180 pixels tall, soft proportional crop mode
-add_image_size( 'thumbnail_croped', 350, 200, array('center','center') ); // 220 pixels wide by 180 pixels tall, soft proportional crop mode
+add_image_size( 'thumbnail_croped', 750, 350, array('center','center') ); // 220 pixels wide by 180 pixels tall, soft proportional crop mode
 add_image_size( 'single-post-thumb', 750, 300, array('center','center') ); // (cropped)
 
 

@@ -37,6 +37,7 @@ use Roots\Sage\Wrapper;
 
     <!-- Frontpage Slider -->
     <?php if ( is_home() || is_single() ) {?>
+    <!--
     <section id="slider-header" class="pageimage-header">
       <div class="container-fluid">
         <div class="pageimage">
@@ -45,6 +46,7 @@ use Roots\Sage\Wrapper;
         </div>
       </div>
     </section>
+    -->
 
     <?php } elseif ( is_search() ) {  ?>
     <section id="slider-header" class="pageimage-header">

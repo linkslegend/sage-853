@@ -34,9 +34,9 @@
         ?>
         </div>
         <div class="menu-inner-bottom d-xl-none d-lg-none d-md-none">
-        <a href="mailto:info@hzylinder-hydraulik.com">
+        <a href="mailto:info@<?php $protocols = array('https://', 'https://www.', 'www.'); echo str_replace($protocols, '', get_bloginfo('wpurl'));?>">
           <button class="btn btn-default"><i class="fa fa-envelope" aria-hidden="true"></i>
-            <div class="button-text">info@hzylinder-hydraulik.com</div>
+            <div class="button-text">info@<?php $protocols = array('https://', 'https://www.', 'www.'); echo str_replace($protocols, '', get_bloginfo('wpurl'));?></div>
          </button>
         </a>
 
@@ -47,8 +47,7 @@
         </a></span>
 
           <ul>
-            <li>Robert-Bosch-Straße 11</li>
-            <li>74321 Bietigheim-Bissingen</li>
+            <li><?php $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['gmap-value'].''); ?></li>
           </ul>
         </div>
 
