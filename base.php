@@ -13,12 +13,6 @@ use Roots\Sage\Wrapper;
   }else{
       $image_test = get_post_meta($post->ID, 'banner', true);
   }
-  $image_text = get_post_meta($post->ID, 'image_text', true);
-  if ($image_text == ''){
-  	$image_text = get_the_title($ID);
-  }else{
-  	$image_text = get_post_meta($post->ID, 'image_text', true);
-  }
 ?>
 
 <!doctype html>

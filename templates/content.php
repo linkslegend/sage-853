@@ -1,17 +1,7 @@
 <article <?php post_class(); ?>>
   <div class="article-inner">
-  <?php 
-   if ($count % 4 == 1) {
-echo 'test123123123';
- }
-?>
     <div class="image-container">
-    <?php if ($count % 4 == 3) { ?>
-    <a class="blog-page-image hero-image" style="background-image: url('<?php the_post_thumbnail_url('thumbnail_croped'); ?>');" href="<?php the_permalink(); ?>"></a>
-    <?php
-      } else { ?>
     <a class="blog-page-image normal-image" style="background-image: url('<?php the_post_thumbnail_url('thumbnail_croped'); ?>');" href="<?php the_permalink(); ?>"></a>
-    <?php } ?>
     <div class="tag-container" id="tag-container">
       <?php $posttags = get_the_tags();
         if ($posttags) {
