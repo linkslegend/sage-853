@@ -66,7 +66,13 @@ use Roots\Sage\Wrapper;
     <section id="slider-header" class="pageimage-header">
       <div class="container-fluid">
         <div class="pageimage">
-          <img src="<?php echo $image_test ?>"/>
+            <?php
+            if ( has_post_thumbnail() ) {
+              the_post_thumbnail();
+            } else { ?>
+              <img src="<?php echo $image_test ?>"/><?php
+            }
+            ?>
           <h1><?php the_title(); ?></h1>
         </div>
       </div>
