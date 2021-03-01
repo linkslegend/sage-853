@@ -12,8 +12,8 @@
   <li><a href="/datenschutz" title="Datenschutz">Datenschutz</a></li>
   <li><a href="/cookies" title="Cookies">Cookies</a></li>
   <!-- <li><a href="/allgemeine-geschaeftsbedingungen" title="allgemeine geschäftsbedingungen">AGB</a></li> --->
-  <li><a href="/meine-daten" title="meine daten">Meine Daten</a></li>
-  <li><a id="ct-ultimate-gdpr-cookie-open" title="Cookie einstellungen">Cookie einstellungen</a></li>
+  <!-- <li><a href="/meine-daten" title="meine daten">Meine Daten</a></li> -->
+  <!-- <li><a id="ct-ultimate-gdpr-cookie-open" title="Cookie einstellungen">Cookie einstellungen</a></li> -->
  </ul>
 </div>
 

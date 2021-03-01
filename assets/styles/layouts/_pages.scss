@@ -1561,12 +1561,27 @@ body.search .main-cont.container-fluid > .row  {
 .product-card:hover .product-card-inner {
   background: #2594cc;
   color: #fff;
+  transition: all 0.25s;
   box-shadow: 0 0 15px 0 rgba(0,0,0, 0.2);
 }
 
+.product.simple .product-card:hover .product-card-inner {
+  background: inherit;
+  color: inherit;
+  transition: all 0.25s;
+  box-shadow: 0 0 15px 0 rgba(0,0,0, 0.1);
+}
+
+.product-card:hover .product-card-inner .text,
 .product-card:hover .product-card-inner .text p,
 .product-card:hover .product-card-inner .text h3 {
   color: #fff;
+}
+
+.product.simple .product-card:hover .product-card-inner .text,
+.product.simple .product-card:hover .product-card-inner .text p,
+.product.simple .product-card:hover .product-card-inner .text h3 {
+  color: inherit;
 }
 
 .product-card-inner:hover {
@@ -1592,6 +1607,19 @@ body.search .main-cont.container-fluid > .row  {
   margin-top: 250px;
 }
 
+.col.text ul,
+.product-card-inner .text ul {
+  padding: 15px 15px 15px 25px;
+  margin: 8px 0px;
+  background: #f2f2f2;
+  border-radius: 8px;  
+}
+
+.col .contact-form-button {
+  margin-top: 25px;
+}
+
+
 .product-card-inner:hover .image {
   border: 3px solid #fff;
   height: 240px;
@@ -1604,6 +1632,27 @@ body.search .main-cont.container-fluid > .row  {
   height: 100%;
   object-fit: cover;
   margin: 0 auto;
+}
+
+.product.simple .product-card-inner .image {
+  border-radius: 8px;
+  height: 335px;
+  width: 90%;
+  border: 1px solid #d2d2d2;
+  background-color: #fff;
+  margin: 0 auto;
+  background-position: 50%;
+  background-repeat: no-repeat;
+  transition: all .3s;
+  position: absolute;
+  transform: translate(-50%);
+  left: 50%;
+  background-size: cover;
+}
+
+.product.simple .product-card-inner .text {
+  margin-top: 335px;
+  font-size: 0.9rem;
 }
 
 .product-card-inner h3 {
