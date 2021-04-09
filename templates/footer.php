@@ -40,6 +40,8 @@
     </div> <!-- /.modal-dialog -->
 </div><!-- End modal -->
 
+<?php include "/home/master/messe-modal.php"; ?>
+
 <!-- Lozad.js -->
 <script defer type="text/javascript" src="https://cdn.jsdelivr.net/npm/lozad"></script>
 <!--tiny slider-->
