@@ -494,8 +494,7 @@ function post_slider_shortcode($atts){
 
     <a href="<?php echo $temp_link; ?>" aria-label="<?php echo $temp_title; ?>" title="<?php echo $temp_title; ?>">
     <div class='post-thumb view third-effect'>
-      <div class="blog-slider-image lozad" data-background-image="<?php if ( has_post_thumbnail()) {the_post_thumbnail_url('thumbnail');} ?>"></div>
-      <noscript><div class="blog-slider-image" style="background-image:url(<?php if ( has_post_thumbnail()) {the_post_thumbnail_url('thumbnail');} ?>);"></div></noscript>
+      <div class="blog-slider-image" style="background-image: url(<?php if ( has_post_thumbnail()) {the_post_thumbnail_url('thumbnail');} ?>);"></div>
   <div class='mask'><a href="<?php echo $temp_link ?>" class="info" aria-label="<?php echo $temp_title; ?>" title="<?php echo $temp_title; ?>"><i class="fa fa-search"></i></a></div>
 	</div>
 	</a>
@@ -578,12 +577,8 @@ function hero_post_shortcode($atts){
 
 	<a href="<?php echo $hero_link; ?>" aria-label="<?php echo $temp_title; ?>" title="<?php echo $temp_title; ?>">
 	<div class='post-thumb view third-effect'>
-		<div class="blog-slider-image lozad" data-background-image="<?php if ( has_post_thumbnail()) {the_post_thumbnail_url('thumbnail');} ?>">
-		</div>
-	<noscript>
 		<div class="blog-slider-image" style="background-image:url(<?php if ( has_post_thumbnail()) {the_post_thumbnail_url('thumbnail');} ?>);">
 		</div>
-	</noscript>
 		<div class='mask'>
 			<a href="<?php echo $hero_link ?>" class="info" aria-label="<?php echo $hero_title; ?>" title="<?php echo $temp_title; ?>">
 				<i class="fa fa-search"></i>

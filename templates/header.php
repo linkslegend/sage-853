@@ -9,7 +9,7 @@
     <!-- Brand and toggle get grouped for better mobile display -->
       <div class="col-md-3">
     	<a class="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>">
-      <img class="standard logo" src="/wp-content/uploads/<?php $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['logo1'].''); ?>" alt="<?php bloginfo('name'); ?>" itemprop="logo">
+      <img loading="lazy" class="standard logo" src="/wp-content/uploads/<?php $options = get_option('futurewave_theme_options'); echo do_shortcode(''.$options['logo1'].''); ?>" alt="<?php bloginfo('name'); ?>" itemprop="logo">
         
       </a>
       <button class="navbar-toggle collapsed hamburger" id="hamburger-1" type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-controls="bs-example-navbar-collapse-1" aria-expanded="false" aria-label="Toggle navigation">

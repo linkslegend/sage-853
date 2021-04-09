@@ -46,7 +46,7 @@ use Roots\Sage\Wrapper;
     <section id="slider-header" class="pageimage-header">
       <div class="container-fluid">
           <div class="pageimage">
-            <img src="<?php echo $image_test ?>"/>
+            <img loading="lazy" src="<?php echo $image_test ?>"/>
             <h1>Suche: <?php echo get_search_query(); ?></h1>
           </div>
       </div>
@@ -56,7 +56,7 @@ use Roots\Sage\Wrapper;
     <section id="slider-header" class="pageimage-header">
       <div class="container-fluid">
           <div class="pageimage">
-            <img src="<?php echo $image_test ?>"/>
+            <img loading="lazy" src="<?php echo $image_test ?>"/>
             <h1>Fachbegriff: <?php single_tag_title(); ?></h1>
           </div>
       </div>
@@ -70,7 +70,7 @@ use Roots\Sage\Wrapper;
             if ( has_post_thumbnail() ) {
               the_post_thumbnail();
             } else { ?>
-              <img src="<?php echo $image_test ?>"/><?php
+              <img loading="lazy" src="<?php echo $image_test ?>"/><?php
             }
             ?>
           <h1><?php the_title(); ?></h1>
@@ -124,12 +124,22 @@ use Roots\Sage\Wrapper;
     <?php if ( is_page( 'chemikalienbestaendigkeit' ) ) {?>
       <!-- Start Tabelle Modal -->
       <div aria-hidden="true" role="dialog" tabindex="-1" id="skftabelle1" class="modal fade testclass">
-          <div class="modal-dialog">
+          <div class="modal-dialog" style="max-width:100%">
               <div class="modal-content">
               <button aria-hidden="true" data-dismiss="modal" class="close contact-form-close" type="button">x</button>
-              <div class="download-pdf"><a target="_blank" href="http://bit.ly/skf-chemlist">PDF</a></div>
+              <div class="download-pdf"><!--<a target="_blank" href="http://bit.ly/skf-chemlist">PDF</a> | --><a target="_blank" href="https://www.skf.com/binaries/pub12/Images/Table%20p32-33%20w%20-%20EN_tcm_12-157943.png">Vollbildansicht</a></div>
                   <div class="modal-body">
-                    <?php echo file_get_contents('http://www.skf.com/pages/jsp/catalogue-table.jsp?id=tcm:49-6862'); ?>
+                    <h2>Tabelle 1 - Hydraulic fluids and seal material compatibility</h2>
+                    <!-- echo file_get_contents('http://www.skf.com/pages/jsp/catalogue-table.jsp?id=tcm:49-6862'); -->
+                    <img loading="lazy" width="100%" alt="Hydraulic fluids and seal material compatibility" src="https://www.skf.com/binaries/pub12/Images/Table%20p32-33%20w%20-%20EN_tcm_12-157943.png">
+                    <small>
+                      <ul>
+                        <li>1) Ethylene-propylene rubber for reference only – not common for hydraulic cylinders</li>
+                        <li>2)For filled PTFE, compatibility of filler must be considered separately (e.g. bronze not recommended for water-based fluids).</li>
+                        <li>3)Exposure to water-based fluids or moisture causes swelling.</li>
+                        <li>4)Contact SKF</li>
+                      </ul>
+                    </small>
                   </div>
                 </div><!-- /.modal-body -->
               </div> <!-- /.modal-content -->
@@ -143,7 +153,7 @@ use Roots\Sage\Wrapper;
               <button aria-hidden="true" data-dismiss="modal" class="close contact-form-close" type="button">x</button>
               <div class="download-pdf"><a target="_blank" href="http://bit.ly/skf-dichtlipp">PDF</a></div>
                   <div class="modal-body">
-                    <?php echo file_get_contents('http://skf.com/pages/jsp/catalogue-table.jsp?id=tcm:49-6863'); ?>
+                    <!-- echo file_get_contents('http://skf.com/pages/jsp/catalogue-table.jsp?id=tcm:49-6863'); -->
                   </div>
                 </div><!-- /.modal-body -->
               </div> <!-- /.modal-content -->

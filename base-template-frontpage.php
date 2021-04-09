@@ -23,13 +23,13 @@ use Roots\Sage\Wrapper;
         <div class="container-fluid">
           <div class="bannercontainer">
             <div class="video-container" id="video">
-              <video class="lozad video" autoplay loop="true" width="1280" height="720" muted poster="https://bilder-dichtungen.s3-eu-west-1.amazonaws.com/header_video_image.jpg">
-                  <source class="lozad" type="video/mp4" data-src="https://d3izmgt6jx3fl7.cloudfront.net/skf_industrial_seals_teaser.mp4">
-                  <source class="lozad" type="video/webm" data-src="https://d3izmgt6jx3fl7.cloudfront.net/skf_industrial_seals_teaser.webm">
-                  <source class="lozad" type="video/ogg" data-src="https://d3izmgt6jx3fl7.cloudfront.net/skf_industrial_seals_teaser.ogg">
+              <video controls autoplay muted preload="none" loop="true" class="video" width="1280" height="720" poster="https://bilder-dichtungen.s3-eu-west-1.amazonaws.com/header_video_image.jpg">
+                  <source type="video/mp4" src="https://d3izmgt6jx3fl7.cloudfront.net/skf_industrial_seals_teaser.mp4">
+                  <source type="video/webm" src="https://d3izmgt6jx3fl7.cloudfront.net/skf_industrial_seals_teaser.webm">
+                  <source type="video/ogg" src="https://d3izmgt6jx3fl7.cloudfront.net/skf_industrial_seals_teaser.ogg">
               </video>
               <div class="mobile-header">
-              <img title="header image" alt="header image" class="lozad" data-src="https://d3c68j9ltgkr9d.cloudfront.net/mobile-view-header.jpg"/>
+              <img loading="lazy" title="header image" alt="header image" src="https://d3c68j9ltgkr9d.cloudfront.net/mobile-view-header.jpg"/>
               </div>
           </div>
         </div>

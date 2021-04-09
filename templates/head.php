@@ -8,10 +8,6 @@
   <link rel="dns-prefetch" href="//googletagmanager.com">
   <link rel="dns-prefetch" href="//use.fontawesome.com">
 
-  <!--<link rel="icon" type="image/png" sizes="32x32" href="/wp-content/themes/sage-853/images/icons/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="96x96" href="/wp-content/themes/sage-853/images/icons/favicon-96x96.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/wp-content/themes/sage-853/images/icons/favicon-16x16.png">-->
-
   <link rel="icon" href="/wp-content/themes/sage-853/images/icons/favicon.ico">
 
   <meta name="apple-mobile-web-app-capable" content="yes">

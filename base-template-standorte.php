@@ -234,7 +234,7 @@ maxWidth:300
                     www.skf.de/dichtungen<br />
                   </div>
                 <div class="zentrale-image col-sm-6">
-                  <img src="https://intermac.de/googlemaps/skf-standorte-2.png">
+                  <img loading="lazy" src="https://intermac.de/googlemaps/skf-standorte-2.png">
                 </div>
               </div>
             </div>
