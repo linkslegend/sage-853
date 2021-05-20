@@ -8,13 +8,16 @@
 ?>
 
 <?php if ($the_query->have_posts()) : ?>
-  <div class="alert alert-warning">
-    <?php _e('Sorry, no results were found.', 'sage'); ?>
-  </div>
-  <?php get_search_form(); ?>
-<?php endif; ?>
+
 <?php $count = 1; while ($the_query->have_posts()) : $the_query->the_post(); $count++; ?>
   <?php get_template_part('templates/content', get_post_type() != 'post' ? get_post_type() : get_post_format()); ?>
 <?php endwhile; ?>
+
+<?php else: ?>
+
+<div class="alert alert-warning">
+    <?php _e('Tut uns leid – hier liegt anscheinend ein Fehler vor', 'sage'); ?>
+  </div>
+<?php endif; ?>
 
 <?php the_posts_navigation(); ?>
