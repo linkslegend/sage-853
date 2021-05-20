@@ -404,6 +404,16 @@ function custom_excerpt_length( $length ) {
 add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
 
 
+function blog_title_lenght( $title ) {
+	$max = 60;
+	if ( strlen( $title ) > $max ) {
+		return substr( $title, 0, $max ). " ...";
+	} else {
+		return $title;
+	}
+}
+add_filter('the_title', 'blog_title_lenght');
+
 //  -------------> 		#################### 	<-------------
 //  -------------> 		#################### 	<-------------
 //  ---------->Blog Post Slider Frontpage Shortcode<----------
@@ -820,9 +830,6 @@ function youtubeslider_shortcode2($atts){
     wp_reset_postdata();
 };
 
-
-
-
 //  -------------> 		#################### 	<-------------
 //  -------------> 		#################### 	<-------------
 //  ----------> Messen Liste Frontpage Shortcode <----------
@@ -832,7 +839,7 @@ add_shortcode( 'messenliste', 'messenliste_shortcode' );
 function messenliste_shortcode(){
     ob_start();
             ?>
-      <?php include "/home/master/messe-liste.php"; ?>
+      <?php include "./../../messe-liste.php"; ?>
         <?php
         $list = ob_get_clean();
         return $list;
@@ -847,7 +854,7 @@ add_shortcode( 'messenslider', 'messen_shortcode' );
 function messen_shortcode(){
     ob_start();
             ?>
-      <?php include "/home/master/messen.php"; ?>
+      <?php include "./../../messen.php"; ?>
         <?php
         $list = ob_get_clean();
         return $list;

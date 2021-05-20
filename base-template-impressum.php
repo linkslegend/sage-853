@@ -49,7 +49,7 @@ use Roots\Sage\Wrapper;
           <div class="row">
             <main class="main">
               <?php include Wrapper\template_path(); ?>
-              <?php include "/home/master/impressum-content.php"; ?>
+              <?php include "./../../impressum-content.php"; ?>
             </main><!-- /.main -->
             <?php if (Setup\display_sidebar()) : ?>
             <aside class="sidebar">

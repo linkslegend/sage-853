@@ -64,7 +64,7 @@
     <div class="myAlert-inner">
       <a class="close in" id="cookie-message-close" data-dismiss="alert" href="#">&times;</a>
       <div class="alert-content">
-      <?php include "/home/master/header-content.php"; ?>
+      <?php include "./../../header-content.php"; ?>
       </div>
     </div>
     </div>
